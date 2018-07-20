@@ -7,13 +7,17 @@
     <body>
       <div id='data_entry'>
         <h1>Enter Data</h1>
-        <form>
+        <form method='post'>
           <p>Enter the quantity of electricity (in kWh) from your last bill:
-            <input id='bill_qty' type="text">
+            <input name='bill_qty' type="text">
           </p>
           <p>Enter the cost of electricity (in dollars) from your last bill:
-            <input id='bill_cost' type="text">
+            <input name='bill_cost' type="text">
           </p>
+          <p>Enter the the date (in YYYYMMDD format) of your last bill:
+            <input name='bill_date' type="text">
+          </p>
+          <input type="submit">
         </form>
       <div>
     </body>

@@ -1,6 +1,5 @@
 var inputNumber = ""
 
-
 function setup()
 {
    inputNumber = document.querySelector("#testNum");
@@ -15,13 +14,17 @@ function setup()
 
 
 
-
-testButton.addEventListener("click", ()=>
+function test()
 {
-  console.log(inputNumber)
-})
+  userInput = inputNumber.value.replace(/\D/g,'');;
+  console.log(userInput)
+}
+
 
 
 window.addEventListener("load", () =>{
   setup()
+  document.querySelector("#test").addEventListener("click", test);
+
+
 })
