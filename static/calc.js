@@ -1,10 +1,8 @@
 var inputNumber = ""
 
-
 function setup()
 {
    inputNumber = document.querySelector("#testNum");
-
 }
 
 
@@ -15,13 +13,16 @@ function setup()
 
 
 
-
-testButton.addEventListener("click", ()=>
+function test()
 {
   console.log(inputNumber)
-})
+}
+
 
 
 window.addEventListener("load", () =>{
   setup()
+  document.querySelector("#test").addEventListener("click", test);
+
+
 })
