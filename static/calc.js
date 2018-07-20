@@ -16,10 +16,12 @@ function setup()
 
 
 
-
+testButton.addEventListener("click", ()=>
+{
+  console.log(inputNumber)
+})
 
 
 window.addEventListener("load", () =>{
   setup()
-  console.log(inputNumber);
 })
