@@ -5,3 +5,12 @@ h1{
 label{
   color: blue;
 }
+
+#navBar1{
+  display: grid;
+  grid-template-columns: 20% auto auto auto auto
+}
+
+#navBar2{
+  width: 100%
+}
