@@ -17,6 +17,14 @@ class ShowData(webapp2.RequestHandler):
         # }
         self.response.write(template.render())
 
+class ShowCalc(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_env.get_template('templates/calc.html')
+        # values = {
+        # }
+        self.response.write(template.render())
+
 app = webapp2.WSGIApplication([
     ('/data', ShowData),
+    ('/calc', ShowCalc),
 ], debug=True)
