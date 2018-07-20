@@ -3,6 +3,7 @@ var inputNumber = ""
 function setup()
 {
    inputNumber = document.querySelector("#testNum");
+
 }
 
 
@@ -15,7 +16,8 @@ function setup()
 
 function test()
 {
-  console.log(inputNumber)
+  userInput = inputNumber.value.replace(/\D/g,'');;
+  console.log(userInput)
 }
 
 
