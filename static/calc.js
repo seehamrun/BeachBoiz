@@ -1,6 +1,10 @@
+var inputNumber = ""
+
+
 function setup()
 {
-  
+   inputNumber = document.querySelector("#testNum");
+
 }
 
 
@@ -17,5 +21,5 @@ function setup()
 
 window.addEventListener("load", () =>{
   setup()
-
+  console.log(inputNumber);
 })
