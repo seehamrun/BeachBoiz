@@ -25,15 +25,15 @@ li a {
     text-decoration: none;
 }
 
-li a:hover {
-    background-color: #111;
+li .navButton:hover {
+    background-color: #999;
 }
 
 p{
   margin: 10px
 }
 .navButton {
-    background-color: #000;
+    background-color: #000; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
