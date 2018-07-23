@@ -29,6 +29,12 @@ class ShowData(webapp2.RequestHandler):
                                             date=int(date))
         stored_bill.put()
 
+        response_html = jinja_env.get_template('templates/data_submitted.html')
+        values = {
+            'bill': stored_bill
+        }
+        self.response.write(response_html.render(values))
+
 class ShowCalc(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/html'
