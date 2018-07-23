@@ -7,15 +7,36 @@
     <body>
       <div id='data_entry'>
         <h1>Enter Data</h1>
-        <form>
+        <form method='post'>
           <p>Enter the quantity of electricity (in kWh) from your last bill:
-            <input id='bill_qty' type="text">
+            <input name='bill_qty' type="text">
           </p>
           <p>Enter the cost of electricity (in dollars) from your last bill:
-            <input id='bill_cost' type="text">
+            <input name='bill_cost' type="text">
           </p>
+          <p>Enter the the date (in MM/DD/YYYY format) of your last bill:
+            <input name='bill_date' type="date">
+          </p>
+          <input type="submit">
         </form>
-      <div>
+      </div>
+      <div id='show_data'>
+        <table>
+          <tr>
+            <td>Date</td>
+            <td>Quantity</td>
+            <td>Cost</td>
+          </tr>
+          {% for bill in bills %}
+          <tr>
+            <td>{{bill.date}}</td>
+            <td>{{bill.util_qty}}</td>
+            <td>{{bill.util_cost}}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      <div id="data_chart" style="width: 900px; height: 500px"></div>
     </body>
 
 </html>

@@ -5,14 +5,33 @@
 </head>
 <body>
   <div>
-    <label for="testNum">Amount Used:</label>
+    <label for="rateNum">Rate ($/kWh):</label>
+    <input type="text" id="rateNum" placeholder="Numbers Only" required
+      minlength="1">
+  </div>
+
+  <div>
+    <label for="testNum">Amount Used (kWh):</label>
     <input type="text" id="testNum" placeholder="Numbers Only" required
         minlength="1">
   </div>
+
+  <div class="slidecontainer">
+  <input id="electricSlide" type="range" min="1" max="2000" value="1" class="slider" name="slider1">
+  </div>
+
+  <div>
+    <label for="cost">Cost ($):</label>
+    <input type="text" id="cost" placeholder="Numbers Only" required
+        minlength="1">
+
+  <div class="slidecontainer">
+    <input id="costSlide" type="range" min="1" max="2000" value="1" class="slider" name="slider2">
+  </div>
+
   <div id="input">
         <button type="button" id="test" value="Click Me">Submit</button>
   </div>
-
 
 
 
