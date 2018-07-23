@@ -7,6 +7,9 @@
     </head>
 
     <body>
+      <!-- <script>
+        bill_list = {{bills|safe}}
+      </script> -->
       <div id='data_entry'>
         <h1>Enter Data</h1>
         <form method='post'>
@@ -17,7 +20,7 @@
             <input name='bill_cost' type="text">
           </p>
           <p>Enter the the date (in MM/DD/YYYY format) of your last bill:
-            <input name='bill_date' type="date">
+            <input name='bill_date' type="date" max="9999-12-31" min="1900-01-01">
           </p>
           <input type="submit">
         </form>
