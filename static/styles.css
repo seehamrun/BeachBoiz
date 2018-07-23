@@ -1,8 +1,28 @@
 h1{
   color: white;
+  font-family: myFirstFont;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
 }
 
+@font-face {
+  font-family: simple;
+  src: url(Fonts/simplifica.ttf);
+}
 
+@font-face {
+    font-family: myFirstFont;
+    src: url(Fonts/QanelasBold.otf);
+}
+
+@font-face {
+  font-family: labelFont;
+  src: url(Fonts/QanelasSoft.otf);
+  unicode-range: U+20-21, U+3F, U+41-5A, U+61-7A;
+}
+
+label {
+  font-family: labelFont, simple;
+}
 
 body {
   background-color: #41B3A3;
