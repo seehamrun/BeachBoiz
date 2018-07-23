@@ -1,12 +1,11 @@
-body {
-  background-color: #41B3A3
-}
 
 #title {
   text-align: center;
 }
 
-
+h1 {
+  color: white;
+}
 
 .textIn {
   border: 6px double black;
