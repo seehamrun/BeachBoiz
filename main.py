@@ -2,6 +2,7 @@ import webapp2
 import logging
 import jinja2
 import os
+import datetime
 
 from google.appengine.ext import ndb
 
@@ -24,9 +25,14 @@ class ShowData(webapp2.RequestHandler):
     def post(self):
         qty = self.request.get('bill_qty')
         cost = self.request.get('bill_cost')
-        date = self.request.get('bill_date')
+        date = str(self.request.get('bill_date'))
+        year = int(date[:4])
+        month = int(date[5:7])
+        day = int(date[8:10])
+        stored_date = datetime.date(year,month,day)
+        logging.info(date)
         stored_bill = database.DatabaseBill(util_qty=float(qty), util_cost=float(cost),
-                                            date=int(date))
+                                            date=stored_date)
         stored_bill.put()
 
         response_html = jinja_env.get_template('templates/data_submitted.html')
