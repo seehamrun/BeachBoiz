@@ -3,6 +3,9 @@ api_version: 1
 threadsafe: true
 
 handlers:
+- url: /
+  static_files: static/landing.html
+  upload: static/landing.html
 - url: /static.*
   static_dir: static
 - url: /.*
