@@ -25,8 +25,8 @@ li a {
     text-decoration: none;
 }
 
-li a:hover {
-    background-color: #111;
+li .navButton:hover {
+    background-color: #999;
 }
 
 p{
@@ -41,4 +41,5 @@ p{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    outline: none;
 }
