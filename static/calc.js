@@ -20,7 +20,7 @@ function test()
   userInput = inputNumber.value.replace(/\D/g,'');
   if(slider1.value==lastValue)
   {
-    if(userInput>slider1.value)
+    if(userInput>slider1.max)
     {
 
       slider1.max=userInput*1.25
