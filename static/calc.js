@@ -18,13 +18,15 @@ function setup()
 function test()
 {
   userInput = inputNumber.value.replace(/\D/g,'');
+  //if(userInput>slider)
   console.log(userInput)
-  console.log(slider1.value)
+  slider1.value=userInput;
 }
 
 
 
 window.addEventListener("load", () =>{
+
   setup()
   document.querySelector("#test").addEventListener("click", test);
 
