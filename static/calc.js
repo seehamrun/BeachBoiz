@@ -3,8 +3,11 @@ var lastValue = null;
 function setup()
 {
    inputNumber = document.querySelector("#testNum");
-   slider1 = document.querySelector("#electricSlide");
-   lastValue = slider1.value
+   electricSlide = document.querySelector("#electricSlide");
+   inputRate = document.querySelector("#rateNum");
+   costSlide = document.querySelector("#costSlide");
+   inputCost = document.querySelector("#cost");
+   lastValue = electricSlide.value
 }
 
 
@@ -18,24 +21,24 @@ function setup()
 function test()
 {
   userInput = Number(inputNumber.value.replace(/\D/g,''));
-  if(slider1.value==lastValue)
+  if(electricSlide.value==lastValue)
   {
-    console.log(userInput>slider1.max)
-    if(userInput>slider1.max)
+    console.log(userInput>electricSlide.max)
+    if(userInput>electricSlide.max)
     {
 
-      slider1.max=userInput*1.25
+      electricSlide.max=userInput*1.25
     }
-    slider1.value=userInput;
+    electricSlide.value=userInput;
 
     console.log(userInput)
-    console.log(slider1.value)
+    console.log(electricSlide.value)
     lastValue=userInput
   }
   else if(userInput==lastValue)
   {
-    inputNumber.value = slider1.value
-    lastValue=slider1.value
+    inputNumber.value = electricSlide.value
+    lastValue=electricSlide.value
   }
 
 }
