@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
 
-
+console.log("hello")
 
 
   var calcButton = document.querySelector('#calc')
@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
     //jQuery.get("/calc")
   })
 
-  var calcButton = document.querySelector('#data')
+  var dataButton = document.querySelector('#data')
   calcButton.addEventListener("click", ()=>{
     alert ("HI!")
 
