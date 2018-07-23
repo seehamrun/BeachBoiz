@@ -1,10 +1,10 @@
 var inputNumber = ""
-
+var lastValue = null;
 function setup()
 {
    inputNumber = document.querySelector("#testNum");
    slider1 = document.querySelector("#electricSlide");
-
+   lastValue = slider1.value
 }
 
 
@@ -18,15 +18,24 @@ function setup()
 function test()
 {
   userInput = inputNumber.value.replace(/\D/g,'');
-  if(userInput>slider1.value)
+  if(slider1.value==lastValue)
   {
+    if(userInput>slider1.value)
+    {
 
-    slider1.max=userInput*1.25
+      slider1.max=userInput*1.25
+    }
+    slider1.value=userInput;
+
+    console.log(userInput)
+    console.log(slider1.value)
+    lastValue=userInput
   }
-  slider1.value=userInput;
-
-  console.log(userInput)
-  console.log(slider1.value)
+  else if(userInput==lastValue)
+  {
+    inputNumber.value = slider1.value
+    lastValue=slider1.value
+  }
 
 }
 
