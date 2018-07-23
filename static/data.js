@@ -1,25 +1,35 @@
 google.charts.load('current', {packages: ['corechart', 'line']});
 google.charts.setOnLoadCallback(drawBackgroundColor);
 
-function drawBackgroundColor() {
+function drawBackgroundColor(list) {
       var data = new google.visualization.DataTable();
       data.addColumn('date', 'Date');
       data.addColumn('number', 'Amount');
       data.addColumn('number', 'Cost');
 
-      // new_list = []
-      // for bill in bill_list:
-      //   new_list.append([new Date(2000,1,12), bill.bill_qty, bill.bill_cost])
+      // var new_list = []
+      // for (var i = 0; i < bill_list.length; i++) {
+      //   var bill = bill_list[i]
+      //   console.log(bill)
+      //   new_list.push([new Date(bill.date.year, bill.date.month, bill.date.day), bill.bill_qty, bill.bill_cost])
+      // }
+
+      new_list = loadData()
+      console.log(new_list)
+
+      // data.addRows([
+      //   [new Date(2000, 8, 5), 20, 120.00],
+      //   [new Date(2000, 9, 5), 40, 140.00],
+      //   [new Date(2000, 10, 5), 5, 20.00],
+      //   [new Date(2000, 11, 5), 7, 34.00],
+      //   [new Date(2000, 12, 5), 15, 100.00],
+      //   [new Date(2001, 1, 5), 8, 50.00],
+      //   [new Date(2001, 2, 5), 9, 70.00],
+      //   [new Date(2001, 3, 5), 10.5, 90.00],
+      // ]);
 
       data.addRows([
-        [new Date(2000, 8, 5), 20, 120.00],
-        [new Date(2000, 9, 5), 40, 140.00],
-        [new Date(2000, 10, 5), 5, 20.00],
-        [new Date(2000, 11, 5), 7, 34.00],
-        [new Date(2000, 12, 5), 15, 100.00],
-        [new Date(2001, 1, 5), 8, 50.00],
-        [new Date(2001, 2, 5), 9, 70.00],
-        [new Date(2001, 3, 5), 10.5, 90.00],
+        list
       ]);
 
       var options = {
@@ -47,3 +57,14 @@ function drawBackgroundColor() {
       var chart = new google.visualization.LineChart(document.getElementById('data_chart'));
       chart.draw(data, options);
 }
+
+function loadData() {
+  jQuery.get("/get_data", {}, (data) => {
+    //drawBackgroundColor(data)
+    console.log(data)
+  });
+}
+
+// window.addEventListener('load', () => {
+//   drawBackgroundColor()
+// });

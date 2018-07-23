@@ -3,6 +3,7 @@ import logging
 import jinja2
 import os
 import datetime
+import json
 
 from google.appengine.ext import ndb
 
@@ -17,10 +18,10 @@ class ShowData(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/html'
         template = jinja_env.get_template('templates/data.html')
-        values = {
+        bill_values = {
             'bills': database.DatabaseBill.query().fetch()
         }
-        self.response.write(template.render(values))
+        self.response.write(template.render(bill_values))
 
     def post(self):
         qty = self.request.get('bill_qty')
@@ -57,8 +58,20 @@ class ShowHome(webapp2.RequestHandler):
         # }
         self.response.write(template.render())
 
+class LoadData(webapp2.RequestHandler):
+    def get(self):
+        self.response.headers['Content-Type'] = 'application/json'
+        'bills' = database.DatabaseBill.query().fetch()
+        values = {
+
+        }
+        self.response.write(json.dumps(values))
+        #for value in values:
+        #    self.response.write(json.dumps(value))
+
 app = webapp2.WSGIApplication([
     ('/data', ShowData),
     ('/calc', ShowCalc),
     ('/home', ShowHome),
+    ('/get_data', LoadData),
 ], debug=True)
