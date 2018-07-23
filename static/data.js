@@ -7,6 +7,10 @@ function drawBackgroundColor() {
       data.addColumn('number', 'Amount');
       data.addColumn('number', 'Cost');
 
+      // new_list = []
+      // for bill in bill_list:
+      //   new_list.append([new Date(2000,1,12), bill.bill_qty, bill.bill_cost])
+
       data.addRows([
         [new Date(2000, 8, 5), 20, 120.00],
         [new Date(2000, 9, 5), 40, 140.00],
