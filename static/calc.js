@@ -17,9 +17,10 @@ function setup()
 
 function test()
 {
-  userInput = inputNumber.value.replace(/\D/g,'');
+  userInput = Number(inputNumber.value.replace(/\D/g,''));
   if(slider1.value==lastValue)
   {
+    console.log(userInput>slider1.max)
     if(userInput>slider1.max)
     {
 
