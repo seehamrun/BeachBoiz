@@ -70,7 +70,7 @@ function test()
     inputNumber.value = electricSlide.value
     costSlide.value = electricSlide.value*userRate
     inputCost.value = electricSlide.value*userRate
-    lastValue=electricSlide.value
+    lastValue=electricSlide.value*userRate
   }
   else if(userCost/userRate!=lastValue && userCost/userRate!=0)
   {
