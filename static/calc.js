@@ -3,32 +3,25 @@ var lastValue = null;
 function setup()
 {
    inputNumber = document.querySelector("#testNum");
-   electricSlide = document.querySelector("#electricSlide");
    inputRate = document.querySelector("#rateNum");
-   costSlide = document.querySelector("#costSlide");
    inputCost = document.querySelector("#cost");
-   lastValue = electricSlide.value
+
 }
 
 
 
-
-
-
-
-
-
-function test()
+function calculate()
 {
-  console.log("in function")
-  userInput = Number(inputNumber.value.replace(/\D/g,''));
-  userRate = Number(inputRate.value.replace(/\D/g, ''));
-  userCost = Number(inputCost.value.replace(/\D/g, ''));
+  userInput = Number(inputNumber.value);
+  userRate = Number(inputRate.value);
+  userCost = Number(inputCost.value);
+  console.log(userInput*userRate)
+  console.log(userCost)
   calcCost = userRate*userInput
 
 
-  if(userCost==0)
-    calcCost=userRate*electricSlide.value
+  // if(userCost==0)
+  //   calcCost=userRate*electricSlide.value
 
   if(userRate == 0)
   {
@@ -36,59 +29,68 @@ function test()
     return;
   }
 
-  if(userInput>electricSlide.max)
-  {
-    console.log("1")
-    electricSlide.max=userInput*1.25;
-    electricSlide.max = userInput*userRate*1.25
-  }
+  // if(userInput>electricSlide.max)
+  // {
+  //   console.log("1")
+  //   electricSlide.max=userInput*1.25;
+  //   electricSlide.max = userInput*userRate*1.25
+  // }
 
-  if(calcCost>costSlide.max)
-  {
-    console.log("2")
+  // if(calcCost>costSlide.max)
+  // {
+  //   console.log("2")
+  //   costSlide.max=calcCost*1.25;
+  //   electricSlide.max=(calcCost/userRate)*1.25
+  // }
 
-    costSlide.max=calcCost*1.25;
-    electricSlide.max=calcCost/userRate*1.25
-  }
+  // if(userCost>costSlide.max)
+  // {
+  //   console.log("3")
+  //
+  //   costSlide.max=userCost*1.25
+  //   electricSlide.max=userCost/userRate*1.25
+  // }
 
-  if(userCost>costSlide.max)
-  {
-    console.log("3")
-
-    costSlide.max=userCost*1.25
-    electricSlide.max=userCost/userRate*1.25
-  }
   if(userInput!=lastValue && userInput>0)
   {
-    electricSlide.value=userInput;
-    costSlide.value = userInput*userRate;
-    inputCost.value = userInput*userRate;
+    console.log("4")
+    // electricSlide.value=userInput;
+    // costSlide.value = userInput*(userRate);
+    inputCost.value = userInput*(userRate);
     lastValue=userInput
   }
-  else if(electricSlide.value!=lastValue && electricSlide.value!=1)
-  {
-    inputNumber.value = electricSlide.value
-    costSlide.value = electricSlide.value*userRate
-    inputCost.value = electricSlide.value*userRate
-    lastValue=electricSlide.value
-  }
+  // else if(electricSlide.value!=lastValue && electricSlide.value!=1)
+  // {
+  //   console.log("5")
+  //
+  //   inputNumber.value = electricSlide.value
+  //   costSlide.value = electricSlide.value*userRate
+  //   inputCost.value = electricSlide.value*userRate
+  //   console.log(inputCost.value)
+  //   lastValue=electricSlide.value*userRate
+  // }
   else if(userCost/userRate!=lastValue && userCost/userRate!=0)
   {
+    console.log("6")
+
     var amt = userCost/userRate
-    electricSlide.value=amt
+    // electricSlide.value=amt
     inputNumber.value = amt
-    costSlide.value = userCost
+    // costSlide.value = userCost
     lastValue = amt
   }
-  else if (costSlide.value/userRate!=lastValue && costSlide.value!=1)
-  {
-    console.log("madeit")
-    var amt = costSlide.value/userRate
-    electricSlide.value = amt
-    inputNumber.value = amt
-    inputCost.value = costSlide.value
-    lastValue = amt
-  }
+  // else if (costSlide.value/userRate!=lastValue && costSlide.value!=1)
+  // {
+  //   console.log("madeit" +costSlide.value)
+  //   var amt = costSlide.value/userRate
+  //   console.log("amt:" + amt)
+  //   electricSlide.value = amt
+  //   inputNumber.value = amt
+  //   inputCost.value = costSlide.value
+  //   console.log(userInput)
+  //   console.log(lastValue)
+  //   lastValue = amt
+  // }
 
 }
 
@@ -97,7 +99,7 @@ function test()
 window.addEventListener("load", () =>{
 
   setup()
-  document.querySelector("#test").addEventListener("click", test);
+  document.querySelector("#test").addEventListener("click", calculate);
 
 
 })
