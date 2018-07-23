@@ -1,0 +1,14 @@
+
+#title {
+  text-align: center;
+}
+
+h1 {
+  color: white;
+}
+
+.textIn {
+  border: 6px double black;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

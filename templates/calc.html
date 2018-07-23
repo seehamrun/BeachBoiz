@@ -1,18 +1,21 @@
 <html>
 <head>
   <link rel="stylesheet" href="../static/styles.css">
+  <link rel="stylesheet" href="../static/calcStyle.css">
+
   <script src="../static/calc.js"></script>
 </head>
 <body>
+  <h1 id="title">Calculator</h1>
   <div>
     <label for="rateNum">Rate ($/kWh):</label>
-    <input type="text" id="rateNum" placeholder="Numbers Only" required
+    <input class="textIn" type="number" id="rateNum" placeholder="Numbers Only" required
       minlength="1">
   </div>
 
   <div>
     <label for="testNum">Amount Used (kWh):</label>
-    <input type="text" id="testNum" placeholder="Numbers Only" required
+    <input class="textIn" type="number" id="testNum" placeholder="Numbers Only" required
         minlength="1">
   </div>
 
@@ -22,7 +25,7 @@
 
   <div>
     <label for="cost">Cost ($):</label>
-    <input type="text" id="cost" placeholder="Numbers Only" required
+    <input class="textIn" type="number" id="cost" placeholder="Numbers Only" required
         minlength="1">
 
   <!-- <div class="slidecontainer">
@@ -30,7 +33,7 @@
   </div> -->
 
   <div id="input">
-        <button type="button" id="test" value="Click Me">Submit</button>
+        <button type="button" id="test" value="Click Me">Calculate</button>
   </div>
 
 
