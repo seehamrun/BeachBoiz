@@ -19,7 +19,23 @@
           </p>
           <input type="submit">
         </form>
-      <div>
+      </div>
+      <div id='show_data'>
+        <table>
+          <tr>
+            <td>Date</td>
+            <td>Quantity</td>
+            <td>Cost</td>
+          </tr>
+          {% for bill in bills %}
+          <tr>
+            <td>{{bill.date}}</td>
+            <td>{{bill.util_qty}}</td>
+            <td>{{bill.util_cost}}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
     </body>
 
 </html>
