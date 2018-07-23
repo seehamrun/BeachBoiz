@@ -10,7 +10,7 @@ console.log("hello")
   })
 
   var dataButton = document.querySelector('#data')
-  calcButton.addEventListener("click", ()=>{
+  dataButton.addEventListener("click", ()=>{
     alert ("HI!")
 
     //jQuery.get("/data")
