@@ -1,0 +1,15 @@
+body {
+  background-color: #41B3A3
+}
+
+#title {
+  text-align: center;
+}
+
+
+
+.textIn {
+  border: 6px double black;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
