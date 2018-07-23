@@ -1,13 +1,25 @@
+{% autoescape true %}
 <html>
 
     <head>
         <link rel="stylesheet" href="../static/styles.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <!-- <script>
+          var new_list = []
+        </script>
+        {% for bill in bills %}
+        <script>
+          // var bill_list = {{bills}}
+          // console.log(bill_list)
+          b = {{bill}}
+          new_list.push([new Date(b.date.year, b.date.month, b.date.day), b.bill_qty, b.bill_cost])
+        </script>
+        {% endfor %} -->
+        <script src='../static/data.js'></script>
     </head>
 
     <body>
-      <!-- <script>
-        bill_list = {{bills|safe}}
-      </script> -->
       <div id='data_entry'>
         <h1>Enter Data</h1>
         <form method='post'>
@@ -43,3 +55,4 @@
     </body>
 
 </html>
+{% endautoescape %}
