@@ -46,17 +46,20 @@ class ShowData(webapp2.RequestHandler):
 
         response_html = jinja_env.get_template('templates/data_submitted.html')
         values = {
-            'bill': stored_bill
+            'bill': stored_bill,
+            'logoutUrl': users.create_logout_url('/'),
         }
         self.response.write(response_html.render(values))
 
 class ShowCalc(webapp2.RequestHandler):
     def get(self):
+        user = users.get_current_user()
         self.response.headers['Content-Type'] = 'text/html'
         template = jinja_env.get_template('templates/calc.html')
-        # values = {
-        # }
-        self.response.write(template.render())
+        values = {
+            'logoutUrl': users.create_logout_url('/'),
+        }
+        self.response.write(template.render(values))
 
 class ShowHome(webapp2.RequestHandler):
     def get(self):
@@ -65,8 +68,9 @@ class ShowHome(webapp2.RequestHandler):
         template = jinja_env.get_template('templates/home.html')
         values = {
             'logoutUrl': users.create_logout_url('/'),
+            'userName': user.nickname(),
         }
-        self.response.write(template.render())
+        self.response.write(template.render(values))
 
 class LoadData(webapp2.RequestHandler):
     def get(self):
@@ -112,7 +116,17 @@ class ShowSettings(webapp2.RequestHandler):
         # }
         self.response.write('there are no settings here yet. sorry')
 
+class DefaultPage(webapp2.RequestHandler):
+    def get(self):
+        user = users.get_current_user()
+        if user:
+            self.redirect('/home')
+        else:
+            self.redirect('/static/landing.html')
+
+
 app = webapp2.WSGIApplication([
+    ('/', DefaultPage),
     ('/data', ShowData),
     ('/calc', ShowCalc),
     ('/home', ShowHome),
