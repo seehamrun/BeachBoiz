@@ -60,7 +60,11 @@ h1{
   transition: color .5s linear;
   color: black;
   text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+}
 
+#itemImg {
+
+  padding-top: 3px;
 
 }
 
