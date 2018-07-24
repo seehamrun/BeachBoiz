@@ -1,5 +1,6 @@
 <html>
   <head>
+    <!-- links styles to css -->
     <link rel="stylesheet" href="../static/styles.css">
     <link rel="stylesheet" href="../static/calcStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -34,7 +35,7 @@
 
     <div>
       <label for="cost">Cost ($):</label>
-      <input class="textIn" type="number" id="cost" placeholder="Numbers Only" required
+      <input class="textIn" type="number" step="0.0000001" id="cost" placeholder="Numbers Only" required
         minlength="1">
 
   <!-- <div class="slidecontainer">
@@ -58,6 +59,7 @@
         <div class="navbar">
             <ul>
                 <a href="/"><img src="../static/images/logo.jpg" height=48px width=auto alt="Beach Boiz" id="itemImg" style="float:left"></a>
+                <li><a href="/home"<button class="navButton" id="home">Home</button></a></li>
                 <li><a href="/calc"<button class="navButton" id="calc">Calculator</button></a></li>
                 <li><a href="/data"<button class="navButton" id="data">Data</button></a></li>
                 <!-- Code for dropdown bar for settings -->
