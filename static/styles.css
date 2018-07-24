@@ -33,17 +33,13 @@ h1{
     position: fixed;
     bottom: 0;
     width: 100%;
-    box-shadow: 0 10px 8px -6px #999;
-    position: absolute;
+    /* box-shadow: 0 10px 8px -6px #999; */
     left: 0;
-    overflow: hidden;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
 }
 
-.bottomBar {
 
-}
 
 /* Change the color of links on hover */
 .bottomBar a:hover {
@@ -197,6 +193,10 @@ li.dropdown {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+}
+
+#data_chart{
+  margin-bottom: 100px
 }
 
 .dropdown-content a {
