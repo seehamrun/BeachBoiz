@@ -32,13 +32,36 @@ h1{
     overflow: hidden;
     position: fixed;
     bottom: 0;
-    width: 110%;
+    width: 100%;
     box-shadow: 0 10px 8px -6px #999;
     position: absolute;
     left: 0;
     overflow: hidden;
     margin: 0 auto;
     padding: 0;
+}
+
+.bottomBar {
+
+}
+
+/* Change the color of links on hover */
+.bottomBar a:hover {
+  -webkit-transition: background-color .5s linear;
+  -moz-transition: background-color .5s linear;
+  -ms-transition: background-color .5s linear;
+  -o-transition: background-color .5s linear;
+  transition: background-color .5s linear;
+  background-color: #c38d9e;
+  shadow: 2px 2px 0px rgba(0,0,0,0.2);
+
+  -webkit-transition: color .5s linear;
+  -moz-transition: color .5s linear;
+  -ms-transition: color .5s linear;
+  -o-transition: color .5s linear;
+  transition: color .5s linear;
+  color: black;
+
 }
 
 /* Style the links inside the navigation bar */
@@ -52,22 +75,19 @@ h1{
     font-size: 17px;
 }
 
-.navbar {
-  left: 0;
-  position: absolute;
-}
 
-/* Change the color of links on hover */
-.bottomBar a:hover {
-    background-color: #999;
-    color: black;
-}
 
 
 /* Add a color to the active/current link */
 .bottomBar a.active {
     background-color: #4CAF50;
     color: white;
+}
+
+
+.navbar {
+  position: absolute;
+  left: 0;
 }
 
 label {
@@ -134,3 +154,7 @@ body {
 }
 
 /* navbar styles  (end) */
+
+.logout {
+  float: right;
+}

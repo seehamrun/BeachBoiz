@@ -5,6 +5,7 @@ import os
 import datetime
 import json
 
+from google.appengine.api import users
 from google.appengine.ext import ndb
 
 import database
@@ -16,10 +17,13 @@ jinja_env = jinja2.Environment(
 
 class ShowData(webapp2.RequestHandler):
     def get(self):
+        user = users.get_current_user()
+        logging.info('current user is %s' % (user.nickname()))
         self.response.headers['Content-Type'] = 'text/html'
         template = jinja_env.get_template('templates/data.html')
         bill_values = {
-            'bills': database.DatabaseBill.query().order(database.DatabaseBill.date).fetch()
+            'bills': database.DatabaseBill.query().order(database.DatabaseBill.date).fetch(),
+            'logoutUrl': users.create_logout_url('/'),
         }
         self.response.write(template.render(bill_values))
 
@@ -52,10 +56,12 @@ class ShowCalc(webapp2.RequestHandler):
 
 class ShowHome(webapp2.RequestHandler):
     def get(self):
+        user = users.get_current_user()
         self.response.headers['Content-Type'] = 'text/html'
         template = jinja_env.get_template('templates/home.html')
-        # values = {
-        # }
+        values = {
+            'logoutUrl': users.create_logout_url('/'),
+        }
         self.response.write(template.render())
 
 class LoadData(webapp2.RequestHandler):
@@ -71,9 +77,37 @@ class LoadData(webapp2.RequestHandler):
             json_entries.append(e)
         self.response.write(json.dumps(json_entries, default=str))
 
+class DeleteBill(webapp2.RequestHandler):
+    def get(self):
+        bill_to_delete = self.request.get('bill_id')
+        response_html = jinja_env.get_template('templates/delete_confirm.html')
+        key = ndb.Key(urlsafe=bill_to_delete)
+        the_bill = key.get()
+        data = {
+            'bill_id': the_bill.key.urlsafe(),
+            'bill': the_bill
+        }
+        self.response.write(response_html.render(data))
+
+    def post(self):
+        key = ndb.Key(urlsafe=self.request.get('bill_id'))
+        key.delete()
+
+class ShowSettings(webapp2.RequestHandler):
+    def get(self):
+        # user = users.get_current_user()
+        self.response.headers['Content-Type'] = 'text/plain'
+        #template = jinja_env.get_template('templates/home.html')
+        # values = {
+        #     'logoutUrl': users.create_logout_url('/'),
+        # }
+        self.response.write('there are no settings here yet. sorry')
+
 app = webapp2.WSGIApplication([
     ('/data', ShowData),
     ('/calc', ShowCalc),
     ('/home', ShowHome),
     ('/get_data', LoadData),
+    ('/delete_bill', DeleteBill),
+    ('/settings', ShowSettings),
 ], debug=True)

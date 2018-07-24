@@ -1,6 +1,6 @@
 <html>
   <head>
-  	<link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="../static/styles.css">
   </head>
   <body>
     <div class="navbar">
@@ -11,9 +11,10 @@
         <li><a href="/settings"<button class="navButton" id="settings">Settings</button></a></li>
       </ul>
     </div>
-    <h3>Successfully entered bill from {{bill.date}}!</h3>
-    <p>Quantity entered: {{bill.util_qty}} kWh</p>
-    <p>Cost entered: {{bill.util_cost}} kWh</p>
-    <a href='/data'>Back to data page</a>
+    <form method='post'>
+      <div>Are you sure you want to delete the bill from {{bill.date}}? :(((((</div>
+      <input type='hidden' name='bill_id' value='{{bill_id}}'>
+      <input type='submit' value='Yes'>
+    </form>
   </body>
 </html>
