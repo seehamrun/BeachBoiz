@@ -77,9 +77,20 @@ class LoadData(webapp2.RequestHandler):
             json_entries.append(e)
         self.response.write(json.dumps(json_entries, default=str))
 
+class ShowSettings(webapp2.RequestHandler):
+    def get(self):
+        # user = users.get_current_user()
+        self.response.headers['Content-Type'] = 'text/plain'
+        #template = jinja_env.get_template('templates/home.html')
+        # values = {
+        #     'logoutUrl': users.create_logout_url('/'),
+        # }
+        self.response.write('there are no settings here yet. sorry')
+
 app = webapp2.WSGIApplication([
     ('/data', ShowData),
     ('/calc', ShowCalc),
     ('/home', ShowHome),
     ('/get_data', LoadData),
+    ('/settings', ShowSettings),
 ], debug=True)
