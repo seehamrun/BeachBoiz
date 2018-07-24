@@ -1,3 +1,4 @@
+/* Styles header text */
 h1{
   color: white;
   font-family: myFirstFont;
@@ -5,6 +6,7 @@ h1{
   text-align: center;
 }
 
+/* New fonts */
 @font-face {
   font-family: simple;
   src: url(Fonts/simplifica.ttf);
@@ -21,6 +23,7 @@ h1{
   unicode-range: U+20-21, U+3F, U+41-5A, U+61-7A;
 }
 
+/* Modifies the background of text boxes */
 .textIn {
   background-color: white;
 }
@@ -81,7 +84,7 @@ h1{
     color: white;
 }
 
-
+/* Navigation Bar */
 .navbar {
   position: absolute;
   left: 0;
@@ -169,6 +172,7 @@ li a, .dropbtn {
     text-decoration: none;
 }
 
+/* Changes color when hovering */
 li a:hover {
   -webkit-transition: background-color .5s linear;
   -moz-transition: background-color .5s linear;
@@ -177,7 +181,7 @@ li a:hover {
   transition: background-color .5s linear;
   background-color: #e27d60;
 }
-
+/* Changes dropdown color on hover */
 li .dropdown:hover .dropbtn {
     background-color: #999;
 }
@@ -195,6 +199,7 @@ li.dropdown {
     z-index: 1;
 }
 
+/* Adds margin so that bottom half of chart is visible */
 #data_chart{
   margin-bottom: 100px
 }
