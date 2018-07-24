@@ -44,6 +44,7 @@
             <td>{{bill.date}}</td>
             <td>{{bill.util_qty}}</td>
             <td>{{bill.util_cost}}</td>
+            <td><a href='/delete_bill?bill_id={{bill.key.urlsafe()}}'>Delete</a></td>
           </tr>
           {% endfor %}
         </table>
