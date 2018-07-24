@@ -6,8 +6,13 @@ handlers:
 - url: /
   static_files: static/landing.html
   upload: static/landing.html
+- url: /static/images.*
+  static_dir: static/images
+- url: /static/Fonts.*
+  static_dir: static/Fonts
 - url: /static.*
   static_dir: static
+
 - url: /.*
   script: main.app
   login: required

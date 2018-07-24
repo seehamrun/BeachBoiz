@@ -1,8 +1,15 @@
 body{
-  background-image: url("http://footage.framepool.com/shotimg/qf/500294967-stromleitung-stromversorgung-kurve-form-norwegen.jpg");
+  /* background-image: url("IMG_3763.JPG"); */
+  /* image inverting? */
+  transform: rotate(180);
+  /* transparent overlay? */
+  background: linear-gradient(
+                     rgba(20,20,20, .4),
+                     rgba(20,20,20, .6)),
+                     url("/static/images/IMG_3763.JPG");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  color: white;
   background-attachment: fixed;
 }
 
