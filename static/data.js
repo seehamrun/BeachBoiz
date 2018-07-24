@@ -28,18 +28,28 @@ function drawBackgroundColor(list) {
       var options = {
         title: 'Your Energy Usage',
         titleTextStyle: {
-          fontSize: 20,
+          fontSize: 28,
           bold: true
         },
         hAxis: {
           title: 'Date',
           textStyle: {
-            fontSize: 16,
-            bold: true
+            fontSize: 12,
           },
           titleTextStyle: {
-            fontSize: 16,
-            bold: true
+            fontSize: 18,
+            bold: true,
+            italic: false
+          }
+        },
+        vAxis: {
+          textStyle: {
+            fontSize: 12,
+          },
+          titleTextStyle: {
+            fontSize: 18,
+            bold: true,
+            italic: false
           }
         },
         series: {
@@ -51,7 +61,7 @@ function drawBackgroundColor(list) {
           0: {title: 'Amount'},
           1: {title: 'Cost'},
         },
-        backgroundColor: '#e6ffff',
+        //backgroundColor: '#e6ffff',
         legend: { position: 'bottom' },
       };
 
