@@ -1,17 +1,17 @@
 window.addEventListener('load', () => {
 
-console.log("hello")
-
-
-  var calcButton = document.querySelector('#calc')
-  calcButton.addEventListener("click", ()=>{
-    alert ("HI!")
-    //jQuery.get("/calc")
-  })
-
-  var dataButton = document.querySelector('#data')
-  dataButton.addEventListener("click", ()=>{
-    alert ("HI!")
+// console.log("hello")
+//
+//
+//   var calcButton = document.querySelector('#calc')
+//   calcButton.addEventListener("click", ()=>{
+//     alert ("HI!")
+//     //jQuery.get("/calc")
+//   })
+//
+//   var dataButton = document.querySelector('#data')
+//   dataButton.addEventListener("click", ()=>{
+//     alert ("HI!")
 
     //jQuery.get("/data")
   })
