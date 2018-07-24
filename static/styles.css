@@ -221,3 +221,11 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+#login {
+  float: right;
+}
+
+#create {
+  float: right;
+}
