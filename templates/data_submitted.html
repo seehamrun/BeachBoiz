@@ -1,10 +1,11 @@
 <html>
   <head>
+  	<link rel="stylesheet" href="../static/styles.css">
   </head>
   <body>
     <h3>Successfully entered bill from {{bill.date}}!</h3>
-    <p>Quantity entered: {{bill.bill_qty}}kWh</p>
-    <p>Cost entered: {{bill.bill_cost}}kWh</p>
+    <p>Quantity entered: {{bill.util_qty}} kWh</p>
+    <p>Cost entered: {{bill.util_cost}} kWh</p>
     <a href='/data'>Back to data page</a>
   </body>
 </html>

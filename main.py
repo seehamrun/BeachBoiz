@@ -58,20 +58,20 @@ class ShowHome(webapp2.RequestHandler):
         # }
         self.response.write(template.render())
 
-class LoadData(webapp2.RequestHandler):
-    def get(self):
-        self.response.headers['Content-Type'] = 'application/json'
-        'bills' = database.DatabaseBill.query().fetch()
-        values = {
-
-        }
-        self.response.write(json.dumps(values))
-        #for value in values:
-        #    self.response.write(json.dumps(value))
+# class LoadData(webapp2.RequestHandler):
+#     def get(self):
+#         self.response.headers['Content-Type'] = 'application/json'
+#         'bills' = database.DatabaseBill.query().fetch()
+#         values = {
+#
+#         }
+#         self.response.write(json.dumps(values))
+#         #for value in values:
+#         #    self.response.write(json.dumps(value))
 
 app = webapp2.WSGIApplication([
     ('/data', ShowData),
     ('/calc', ShowCalc),
     ('/home', ShowHome),
-    ('/get_data', LoadData),
+#    ('/get_data', LoadData),
 ], debug=True)
