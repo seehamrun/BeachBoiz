@@ -14,8 +14,8 @@
           <li><a href="/calc"<button class="navButton" id="calc">Calculator</button></a></li>
           <li><a href="/data"<button class="navButton" id="data">Data</button></a></li>
           <!-- Code for dropdown bar for settings* -->
-          <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Settings</a>
+          <li style="float:right"class="dropdown">
+            <a href="javascript:void(0)" id="settings"class="dropbtn">Settings</a>
             <div class="dropdown-content">
               <a href="#">Link 1</a>
               <a href="#">Link 2</a>
@@ -24,10 +24,7 @@
           </li>
         </ul>
       </div>
-      <div class="logout">
-        {{user_nickname}}
-        <a href="{{logoutUrl}}">Log Out</a>
-      </div>
+      <a class="logout" href="{{logoutUrl}}">Log Out</a>
       <div id='data_entry'>
         <h1>Enter Data</h1>
         <form method='post'>
@@ -62,6 +59,13 @@
       </div>
       <br>
       <div id="data_chart" style="width: 900px; height: 500px"></div>
+      
+      <div class="bottomBar">
+        <a href="../static/about_us.html">About</a>
+        <a href="#contactUs">Contact</a>
+        <a href="#howToHelp">How to help</a>
+      </div>
+
     </body>
 
 </html>
