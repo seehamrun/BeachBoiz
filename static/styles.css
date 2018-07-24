@@ -52,14 +52,14 @@ h1{
 }
 
 /* Change the color of links on hover */
-.navbar a:hover {
+.bottomBar a:hover {
     background-color: #999;
     color: black;
 }
 
 
 /* Add a color to the active/current link */
-.navbar a.active {
+.bottomBar a.active {
     background-color: #4CAF50;
     color: white;
 }
