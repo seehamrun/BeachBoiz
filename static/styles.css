@@ -51,6 +51,11 @@ h1{
     font-size: 17px;
 }
 
+.navbar {
+  left: 0;
+  position: absolute;
+}
+
 /* Change the color of links on hover */
 .bottomBar a:hover {
     background-color: #999;
@@ -121,6 +126,10 @@ p{
     font-size: 15px;
     outline: none;
     font-family: arial;
+}
+
+body {
+  margin-top: 60px;
 }
 
 /* navbar styles  (end) */
