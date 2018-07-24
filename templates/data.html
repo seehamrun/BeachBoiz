@@ -24,7 +24,10 @@
           </li>
         </ul>
       </div>
-      <a class="logout" href="{{logoutUrl}}">Log Out</a>
+      <div class="logout">
+        {{user_nickname}}
+        <a href="{{logoutUrl}}">Log Out</a>
+      </div>
       <div id='data_entry'>
         <h1>Enter Data</h1>
         <form method='post'>
