@@ -19,7 +19,7 @@ class ShowData(webapp2.RequestHandler):
         self.response.headers['Content-Type'] = 'text/html'
         template = jinja_env.get_template('templates/data.html')
         bill_values = {
-            'bills': database.DatabaseBill.query().fetch()
+            'bills': database.DatabaseBill.query().order(database.DatabaseBill.date).fetch()
         }
         self.response.write(template.render(bill_values))
 
@@ -58,20 +58,22 @@ class ShowHome(webapp2.RequestHandler):
         # }
         self.response.write(template.render())
 
-# class LoadData(webapp2.RequestHandler):
-#     def get(self):
-#         self.response.headers['Content-Type'] = 'application/json'
-#         'bills' = database.DatabaseBill.query().fetch()
-#         values = {
-#
-#         }
-#         self.response.write(json.dumps(values))
-#         #for value in values:
-#         #    self.response.write(json.dumps(value))
+class LoadData(webapp2.RequestHandler):
+    def get(self):
+        self.response.headers['Content-Type'] = 'application/json'
+        bills_list = database.DatabaseBill.query().order(database.DatabaseBill.date).fetch()
+        json_entries = []
+        for bill in bills_list:
+            e = {}
+            e['qty'] = bill.util_qty
+            e['cost'] = bill.util_cost
+            e['date'] = bill.date
+            json_entries.append(e)
+        self.response.write(json.dumps(json_entries, default=str))
 
 app = webapp2.WSGIApplication([
     ('/data', ShowData),
     ('/calc', ShowCalc),
     ('/home', ShowHome),
-#    ('/get_data', LoadData),
+    ('/get_data', LoadData),
 ], debug=True)

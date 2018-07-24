@@ -1,5 +1,14 @@
 google.charts.load('current', {packages: ['corechart', 'line']});
-google.charts.setOnLoadCallback(drawBackgroundColor);
+
+function getDate(str) {
+  // takes in a string representing a date and turns it into a dictionary
+  // because json is stupid
+  e = {}
+  e['year'] = str.substring(0,4)
+  e['month'] = str.substring(5,7)
+  e['day'] = str.substring(8,10)
+  return e
+}
 
 function drawBackgroundColor(list) {
       var data = new google.visualization.DataTable();
@@ -7,30 +16,25 @@ function drawBackgroundColor(list) {
       data.addColumn('number', 'Amount');
       data.addColumn('number', 'Cost');
 
-      // var new_list = []
-      // for (var i = 0; i < bill_list.length; i++) {
-      //   var bill = bill_list[i]
-      //   console.log(bill)
-      //   new_list.push([new Date(bill.date.year, bill.date.month, bill.date.day), bill.bill_qty, bill.bill_cost])
-      // }
+      var new_list = []
+      for (var i = 0; i < list.length; i++) {
+        var bill = list[i]
+        date = getDate(bill['date'])
+        new_list.push([new Date(date.year, date.month, date.day), bill.qty, bill.cost])
+      }
 
-      new_list = loadData()
-      console.log(new_list)
+      // data.addRows([
+      //   [new Date(2000, 8, 5), 20, 120.00],
+      //   [new Date(2000, 9, 5), 40, 140.00],
+      //   [new Date(2000, 10, 5), 5, 20.00],
+      //   [new Date(2000, 11, 5), 7, 34.00],
+      //   [new Date(2000, 12, 5), 15, 100.00],
+      //   [new Date(2001, 1, 5), 8, 50.00],
+      //   [new Date(2001, 2, 5), 9, 70.00],
+      //   [new Date(2001, 3, 5), 10.5, 90.00],
+      // ]);
 
-      data.addRows([
-        [new Date(2000, 8, 5), 20, 120.00],
-        [new Date(2000, 9, 5), 40, 140.00],
-        [new Date(2000, 10, 5), 5, 20.00],
-        [new Date(2000, 11, 5), 7, 34.00],
-        [new Date(2000, 12, 5), 15, 100.00],
-        [new Date(2001, 1, 5), 8, 50.00],
-        [new Date(2001, 2, 5), 9, 70.00],
-        [new Date(2001, 3, 5), 10.5, 90.00],
-      ]);
-
-//       data.addRows([
-//         list
-//       ]);
+      data.addRows(new_list);
 
       var options = {
         title: 'Your Energy Usage',
@@ -46,12 +50,7 @@ function drawBackgroundColor(list) {
           0: {title: 'Amount'},
           1: {title: 'Cost'}
         },
-        backgroundColor: '#f1f8e9',
-        // vAxis: {
-        //   viewWindow: {
-        //     max: 150
-        //   }
-        // }
+        backgroundColor: '#e6ffff',
       };
 
       var chart = new google.visualization.LineChart(document.getElementById('data_chart'));
@@ -60,11 +59,10 @@ function drawBackgroundColor(list) {
 
 function loadData() {
   jQuery.get("/get_data", {}, (data) => {
-    //drawBackgroundColor(data)
-    console.log(data)
+    drawBackgroundColor(data)
   });
 }
 
-// window.addEventListener('load', () => {
-//   drawBackgroundColor()
-// });
+google.charts.setOnLoadCallback(() => {
+  loadData()
+});
