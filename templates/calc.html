@@ -1,43 +1,46 @@
 <html>
-<head>
-  <link rel="stylesheet" href="../static/styles.css">
-  <link rel="stylesheet" href="../static/calcStyle.css">
+  <head>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="../static/calcStyle.css">
 
-  <script src="../static/calc.js"></script>
-</head>
-<body>
-  <h1 id="title">Calculator</h1>
-  <div>
-    <label for="rateNum">Rate ($/kWh):</label>
-    <input class="textIn" type="number" id="rateNum" placeholder="Numbers Only" required
+    <script src="../static/calc.js"></script>
+  </head>
+  <body>
+    <h1 id="title">Calculator</h1>
+    <div>
+      <label for="rateNum">Rate ($/kWh):</label>
+      <input class="textIn" type="number" id="rateNum" placeholder="Numbers Only" required
       minlength="1">
-  </div>
+    </div>
 
-  <div>
-    <label for="testNum">Amount Used (kWh):</label>
-    <input class="textIn" type="number" id="testNum" placeholder="Numbers Only" required
+    <div>
+      <label for="testNum">Amount Used (kWh):</label>
+      <input class="textIn" type="number" id="testNum" placeholder="Numbers Only" required
         minlength="1">
-  </div>
+    </div>
+<!-- <div class="slidecontainer">
+      <input id="electricSlide" type="range" min="1" max="2000" value="1" class="slider"  name="slider1">
+    </div> -->
 
-  <!-- <div class="slidecontainer">
-  <input id="electricSlide" type="range" min="1" max="2000" value="1" class="slider"  name="slider1">
-  </div> -->
-
-  <div>
-    <label for="cost">Cost ($):</label>
-    <input class="textIn" type="number" id="cost" placeholder="Numbers Only" required
+    <div>
+      <label for="cost">Cost ($):</label>
+      <input class="textIn" type="number" id="cost" placeholder="Numbers Only" required
         minlength="1">
 
   <!-- <div class="slidecontainer">
     <input id="costSlide" type="range" min="1" max="2000" value="1" class="slider"  name="slider2">
   </div> -->
 
-  <div id="input">
+    <div id="input">
         <button type="button" id="test" value="Click Me">Calculate</button>
-  </div>
+    </div>
 
+    <div class="bottomBar">
+      <a href="#home" class="active">Home</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+    </div>
+    
 
-
-
-</body>
+  </body>
 </html>
