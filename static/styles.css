@@ -114,6 +114,7 @@ ul {
     top: 0;
     width: 100%;
     font-size: 20px;
+    font-family: myFirstFont;
 
 
 }
@@ -136,14 +137,7 @@ li .navButton:hover {
   -ms-transition: background-color .5s linear;
   -o-transition: background-color .5s linear;
   transition: background-color .5s linear;
-  background-color: #c38d9e;
-
-  -webkit-transition: color .5s linear;
-  -moz-transition: color .5s linear;
-  -ms-transition: color .5s linear;
-  -o-transition: color .5s linear;
-  transition: color .5s linear;
-  color: black;
+  background-color: #e27d60;
   text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
 }
 
@@ -159,7 +153,6 @@ p{
     text-decoration: none;
     display: inline-block;
     outline: none;
-    font-family: arial;
 }
 
 body {
@@ -186,7 +179,7 @@ li a:hover {
   -ms-transition: background-color .5s linear;
   -o-transition: background-color .5s linear;
   transition: background-color .5s linear;
-  background-color: #c38d9e;
+  background-color: #e27d60;
 }
 
 li .dropdown:hover .dropbtn {
