@@ -5,6 +5,7 @@ import os
 import datetime
 import json
 
+from google.appengine.api import users
 from google.appengine.ext import ndb
 
 import database
@@ -16,10 +17,13 @@ jinja_env = jinja2.Environment(
 
 class ShowData(webapp2.RequestHandler):
     def get(self):
+        user = users.get_current_user()
+        logging.info('current user is %s' % (user.nickname()))
         self.response.headers['Content-Type'] = 'text/html'
         template = jinja_env.get_template('templates/data.html')
         bill_values = {
-            'bills': database.DatabaseBill.query().order(database.DatabaseBill.date).fetch()
+            'bills': database.DatabaseBill.query().order(database.DatabaseBill.date).fetch(),
+            'logoutUrl': users.create_logout_url('/'),
         }
         self.response.write(template.render(bill_values))
 
@@ -52,10 +56,12 @@ class ShowCalc(webapp2.RequestHandler):
 
 class ShowHome(webapp2.RequestHandler):
     def get(self):
+        user = users.get_current_user()
         self.response.headers['Content-Type'] = 'text/html'
         template = jinja_env.get_template('templates/home.html')
-        # values = {
-        # }
+        values = {
+            'logoutUrl': users.create_logout_url('/'),
+        }
         self.response.write(template.render())
 
 class LoadData(webapp2.RequestHandler):
