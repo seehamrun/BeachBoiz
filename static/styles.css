@@ -53,7 +53,6 @@ h1{
   -o-transition: background-color .5s linear;
   transition: background-color .5s linear;
   background-color: #c38d9e;
-  shadow: 2px 2px 0px rgba(0,0,0,0.2);
 
   -webkit-transition: color .5s linear;
   -moz-transition: color .5s linear;
@@ -61,6 +60,8 @@ h1{
   -o-transition: color .5s linear;
   transition: color .5s linear;
   color: black;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+
 
 }
 
@@ -130,7 +131,20 @@ li a {
 }
 
 li .navButton:hover {
-    background-color: #999;
+  -webkit-transition: background-color .5s linear;
+  -moz-transition: background-color .5s linear;
+  -ms-transition: background-color .5s linear;
+  -o-transition: background-color .5s linear;
+  transition: background-color .5s linear;
+  background-color: #c38d9e;
+
+  -webkit-transition: color .5s linear;
+  -moz-transition: color .5s linear;
+  -ms-transition: color .5s linear;
+  -o-transition: color .5s linear;
+  transition: color .5s linear;
+  color: black;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
 }
 
 p{
