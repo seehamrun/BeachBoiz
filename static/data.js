@@ -38,8 +38,20 @@ function drawBackgroundColor(list) {
 
       var options = {
         title: 'Your Energy Usage',
+        titleTextStyle: {
+          fontSize: 20,
+          bold: true
+        },
         hAxis: {
-          title: 'Date'
+          title: 'Date',
+          textStyle: {
+            fontSize: 16,
+            bold: true
+          },
+          titleTextStyle: {
+            fontSize: 16,
+            bold: true
+          }
         },
         series: {
           0: {targetAxisIndex: 0},
@@ -48,9 +60,10 @@ function drawBackgroundColor(list) {
         vAxes: {
           // Adds titles to each axis.
           0: {title: 'Amount'},
-          1: {title: 'Cost'}
+          1: {title: 'Cost'},
         },
         backgroundColor: '#e6ffff',
+        legend: { position: 'bottom' },
       };
 
       var chart = new google.visualization.LineChart(document.getElementById('data_chart'));
@@ -63,6 +76,4 @@ function loadData() {
   });
 }
 
-google.charts.setOnLoadCallback(() => {
-  loadData()
-});
+google.charts.setOnLoadCallback(loadData);
