@@ -77,6 +77,22 @@ class LoadData(webapp2.RequestHandler):
             json_entries.append(e)
         self.response.write(json.dumps(json_entries, default=str))
 
+class DeleteBill(webapp2.RequestHandler):
+    def get(self):
+        bill_to_delete = self.request.get('bill_id')
+        response_html = jinja_env.get_template('templates/delete_confirm.html')
+        key = ndb.Key(urlsafe=bill_to_delete)
+        the_bill = key.get()
+        data = {
+            'bill_id': the_bill.key.urlsafe(),
+            'bill': the_bill
+        }
+        self.response.write(response_html.render(data))
+
+    def post(self):
+        key = ndb.Key(urlsafe=self.request.get('bill_id'))
+        key.delete()
+
 class ShowSettings(webapp2.RequestHandler):
     def get(self):
         # user = users.get_current_user()
@@ -92,5 +108,6 @@ app = webapp2.WSGIApplication([
     ('/calc', ShowCalc),
     ('/home', ShowHome),
     ('/get_data', LoadData),
+    ('/delete_bill', DeleteBill),
     ('/settings', ShowSettings),
 ], debug=True)
