@@ -47,6 +47,7 @@ class ShowData(webapp2.RequestHandler):
         response_html = jinja_env.get_template('templates/data_submitted.html')
         values = {
             'bill': stored_bill,
+            'logoutUrl': users.create_logout_url('/'),
         }
         self.response.write(response_html.render(values))
 
