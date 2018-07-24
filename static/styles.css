@@ -41,6 +41,21 @@ h1{
     padding: 0;
 }
 
+.bottomBar {
+
+}
+
+/* Change the color of links on hover */
+.bottomBar a:hover {
+  -webkit-transition: background-color .5s linear;
+  -moz-transition: background-color .5s linear;
+  -ms-transition: background-color .5s linear;
+  -o-transition: background-color .5s linear;
+  transition: background-color .5s linear;
+  background-color: #c38d9e;
+  shadow: 2px 2px 0px rgba(0,0,0,0.2);
+}
+
 /* Style the links inside the navigation bar */
 .bottomBar a {
     float: left;
@@ -52,16 +67,7 @@ h1{
     font-size: 17px;
 }
 
-.navbar {
-  left: 0;
-  position: absolute;
-}
 
-/* Change the color of links on hover */
-.bottomBar a:hover {
-    background-color: #999;
-    color: black;
-}
 
 
 /* Add a color to the active/current link */
