@@ -54,6 +54,14 @@ h1{
   transition: background-color .5s linear;
   background-color: #c38d9e;
   shadow: 2px 2px 0px rgba(0,0,0,0.2);
+
+  -webkit-transition: color .5s linear;
+  -moz-transition: color .5s linear;
+  -ms-transition: color .5s linear;
+  -o-transition: color .5s linear;
+  transition: color .5s linear;
+  color: black;
+
 }
 
 /* Style the links inside the navigation bar */
@@ -74,6 +82,12 @@ h1{
 .bottomBar a.active {
     background-color: #4CAF50;
     color: white;
+}
+
+
+.navbar {
+  position: absolute;
+  left: 0;
 }
 
 label {
