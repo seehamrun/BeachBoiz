@@ -116,7 +116,17 @@ class ShowSettings(webapp2.RequestHandler):
         # }
         self.response.write('there are no settings here yet. sorry')
 
+class DefaultPage(webapp2.RequestHandler):
+    def get(self):
+        user = users.get_current_user()
+        if user:
+            self.redirect('/home')
+        else:
+            self.redirect('/static/landing.html')
+
+
 app = webapp2.WSGIApplication([
+    ('/', DefaultPage),
     ('/data', ShowData),
     ('/calc', ShowCalc),
     ('/home', ShowHome),
