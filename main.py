@@ -4,6 +4,7 @@ import jinja2
 import os
 import datetime
 import json
+import time
 
 from google.appengine.api import users
 from google.appengine.ext import ndb
@@ -24,10 +25,12 @@ class ShowData(webapp2.RequestHandler):
         bill_values = {
             'bills': database.DatabaseBill.query().order(database.DatabaseBill.date).fetch(),
             'logoutUrl': users.create_logout_url('/'),
+            'user_nickname': user.nickname(),
         }
         self.response.write(template.render(bill_values))
 
     def post(self):
+        user = users.get_current_user()
         qty = self.request.get('bill_qty')
         cost = self.request.get('bill_cost')
         date = str(self.request.get('bill_date'))
@@ -37,7 +40,7 @@ class ShowData(webapp2.RequestHandler):
         stored_date = datetime.date(year,month,day)
         logging.info(date)
         stored_bill = database.DatabaseBill(util_qty=float(qty), util_cost=float(cost),
-                                            date=stored_date)
+                                            date=stored_date, user=user.nickname())
         stored_bill.put()
 
         response_html = jinja_env.get_template('templates/data_submitted.html')
@@ -92,6 +95,9 @@ class DeleteBill(webapp2.RequestHandler):
     def post(self):
         key = ndb.Key(urlsafe=self.request.get('bill_id'))
         key.delete()
+        time.sleep(.1)
+        self.redirect("/data")
+
 
 class ShowSettings(webapp2.RequestHandler):
     def get(self):

@@ -13,10 +13,21 @@
           <img src="../static/images/logo.jpg" height=48px width=auto alt="Beach Boiz" id="itemImg" style="float:left"/>
           <li><a href="/calc"<button class="navButton" id="calc">Calculator</button></a></li>
           <li><a href="/data"<button class="navButton" id="data">Data</button></a></li>
-          <li><a href="/settings"<button class="navButton" id="settings">Settings</button></a></li>
+          <!-- Code for dropdown bar for settings* -->
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Settings</a>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </li>
         </ul>
       </div>
-      <a class="logout" href="{{logoutUrl}}">Log Out</a>
+      <div class="logout">
+        {{user_nickname}}
+        <a href="{{logoutUrl}}">Log Out</a>
+      </div>
       <div id='data_entry'>
         <h1>Enter Data</h1>
         <form method='post'>
