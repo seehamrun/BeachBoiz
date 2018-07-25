@@ -65,7 +65,7 @@ h2{
 
 h3{
   font-family: myFirstFont, adam;
-  color:white;
+  color:#C38D9E;
   font-size: 2.5vw;
 }
 
@@ -77,6 +77,10 @@ h3{
 #sp{
   font-size: 1.8vw;
 
+}
+
+#dataInfo{
+  color:white;
 }
 
 #proDesContent{
