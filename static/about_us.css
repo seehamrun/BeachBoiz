@@ -51,3 +51,7 @@ h1{
 h4{
   font-size: 40px;
 }
+
+body{
+  margin: 0;
+}
