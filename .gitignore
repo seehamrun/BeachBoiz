@@ -6,3 +6,4 @@ api.js
 *~
 main.pyc
 .DS_Store
+*.pyc
