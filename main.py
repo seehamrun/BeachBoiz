@@ -131,13 +131,13 @@ class DeleteBill(webapp2.RequestHandler):
 
 class ShowSettings(webapp2.RequestHandler):
     def get(self):
-        # user = users.get_current_user()
+        user = users.get_current_user()
         self.response.headers['Content-Type'] = 'text/html'
         template = jinja_env.get_template('templates/settings.html')
-        # values = {
-        #     'logoutUrl': users.create_logout_url('/'),
-        # }
-        self.response.write(template.render())
+        values = {
+            'logoutUrl': users.create_logout_url('/'),
+        }
+        self.response.write(template.render(values))
 
 class DefaultPage(webapp2.RequestHandler):
     def get(self):
