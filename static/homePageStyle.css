@@ -68,4 +68,5 @@ body{
 #data_chart{
   padding: 300px;
   text-align: center;
+  z-index: 1;
 }
