@@ -130,6 +130,7 @@ body{
   display:block;
   text-decoration: none;
   outline: none;
+  line-height: 65px;
 }
 
 .learnMoreB:active {
