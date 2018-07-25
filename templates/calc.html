@@ -13,16 +13,18 @@
 
 
     <h1 id="title">Calculator</h1>
+    <div class="container">
+
     <!-- Rate input -->
     <div>
-      <label for="rateNum">Rate ($/kWh):</label>
+      <label for="rateNum" class="testCenter">Rate ($/kWh):<br> </label>
       <input class="textIn" type="number" id="rateNum" placeholder="Numbers Only" required
       minlength="1">
     </div>
 
     <!-- Electricity Input -->
     <div>
-      <label for="testNum">Amount Used (kWh):</label>
+      <label for="testNum" class="testCenter">Amount Used (kWh):<br> </label>
       <input class="textIn" type="number" id="testNum" placeholder="Numbers Only" required
         minlength="1">
     </div>
@@ -35,9 +37,10 @@
 
     <!-- Cost input -->
     <div>
-      <label for="cost">Cost ($):</label>
+      <label for="cost">Cost ($):<br> </label>
       <input class="textIn" type="number" step="0.0000001" id="cost" placeholder="Numbers Only" required
         minlength="1">
+    </div>
 
     <!-- Cost Slider -->
     <div class="slidecontainer">
@@ -49,8 +52,7 @@
     <div id="input">
         <button type="button" id="test" value="Click Me">Calculate</button>
     </div>
-
-
+  </div>
 
     <!-- Bottom Navigation Bar -->
     <div class="bottomBar">
@@ -58,7 +60,7 @@
       <a href="../static/contact.html">Contact</a>
       <a href="../static/contact.html">How to help</a>
     </div>
-
+  </div>
     <!-- NavBar code -->
     <h1>
         <div class="navbar">

@@ -68,6 +68,11 @@ button:active {
   position: absolute;
 }
 
-body{
-  margin-top: 60px;
+.container{
+  display: grid;
+
+}
+
+input{
+  margin-top: 10px;
 }
