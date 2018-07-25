@@ -69,10 +69,14 @@ button:active {
 }
 
 .container{
-  display: grid;
-
+  text-align: center;
 }
 
 input{
   margin-top: 10px;
+}
+
+#instructions{
+  text-align: center;
+  font-size: 20px
 }
