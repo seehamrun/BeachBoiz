@@ -28,6 +28,7 @@
 }
 
 h2{
+  font-family: myFirstFont, adam;
   color:#C38D9E;
   text-align: left;
 }
@@ -64,5 +65,5 @@ html{
 
 table{
   width:100%;
-  text-align: 
+  text-align:
 }
