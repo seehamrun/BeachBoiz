@@ -1,7 +1,7 @@
 /* Styles header text */
 h1{
   color: white;
-  font-family: myFirstFont;
+  font-family: myFirstFont, adam;
   text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
   text-align: center;
 }
@@ -15,6 +15,7 @@ h1{
 @font-face {
     font-family: myFirstFont;
     src: url(Fonts/QanelasBold.otf);
+    unicode-range: U+20-21, U+3F, U+41-5A, U+61-7A;
 }
 
 @font-face {
@@ -23,35 +24,12 @@ h1{
   unicode-range: U+20-21, U+3F, U+41-5A, U+61-7A;
 }
 
-/* Slider Labels */
-output {
-  position: absolute;
-  background-image: linear-gradient(#444444, #999999);
-  width: 40px;
-  height: 30px;
-  text-align: center;
-  color: white;
-  border-radius: 10px;
-  display: inline-block;
-  font: bold 15px/30px Georgia;
-  bottom: 175%;
-  left: 0;
-  margin-left: -1%;
+@font-face {
+  font-family: adam;
+  src: url(Fonts/adam.otf);
+
 }
 
-output:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-top: 10px solid #999999;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  margin-top: -1px;
-}
 
 
 
@@ -66,7 +44,7 @@ output:after {
 .bottomBar {
     background-color: #333;
     overflow: hidden;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     /* box-shadow: 0 10px 8px -6px #999; */
@@ -249,7 +227,7 @@ li.dropdown {
     text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {background-color: #ccc}
 
 .dropdown:hover .dropdown-content {
     display: block;

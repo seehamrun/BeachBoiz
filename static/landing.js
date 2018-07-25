@@ -14,7 +14,7 @@ window.addEventListener('load', () => {
 //     alert ("HI!")
 
     //jQuery.get("/data")
-  })
+  // })
 
   // var calcButton = document.querySelector('#login')
   // calcButton.addEventListener("click", ()=>{
