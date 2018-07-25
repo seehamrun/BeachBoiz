@@ -147,6 +147,24 @@ class DefaultPage(webapp2.RequestHandler):
         else:
             self.redirect('/static/landing.html')
 
+class DeleteGoal(webapp2.RequestHandler):
+    def get(self):
+        goal_to_delete = self.request.get('goal_id')
+        response_html = jinja_env.get_template('templates/delete_goal_confirm.html')
+        key = ndb.Key(urlsafe=goal_to_delete)
+        the_goal = key.get()
+        data = {
+            'goal_id': the_goal.key.urlsafe(),
+            'goal': the_goal
+        }
+        self.response.write(response_html.render(data))
+
+    def post(self):
+        key = ndb.Key(urlsafe=self.request.get('goal_id'))
+        key.delete()
+        time.sleep(.1)
+        self.redirect("/home")
+
 app = webapp2.WSGIApplication([
     ('/', DefaultPage),
     ('/data', ShowData),
@@ -154,5 +172,6 @@ app = webapp2.WSGIApplication([
     ('/home', ShowHome),
     ('/get_data', LoadData),
     ('/delete_bill', DeleteBill),
+    ('/delete_goal', DeleteGoal),
     ('/settings', ShowSettings),
 ], debug=True)
