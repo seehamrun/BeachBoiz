@@ -9,6 +9,7 @@
     </head>
 
     <body>
+
       <div class="navbar">
         <ul>
           <a href="/"><img src="../static/images/logo.jpg" height=48px width=auto alt="Beach Boiz" id="itemImg" style="float:left"/></a>
@@ -26,7 +27,7 @@
           </li>
         </ul>
       </div>
-      <div id='data_entry'>
+      <div id='data_entry' class="notBottom">
         <h1>Enter Data</h1>
         <form method='post'>
           <p>Enter the the date (in MM/DD/YYYY format) of your last bill:
@@ -41,7 +42,7 @@
           <input type="submit">
         </form>
       </div>
-      <div id='show_data'>
+      <div id='show_data' class="notBottom">
         <table id='data_table'>
           <tr>
             <th>Date</th>
@@ -60,7 +61,7 @@
         </table>
       </div>
       <br>
-      <div id="data_chart" style="width: 900px; height: 500px"></div>
+      <div id="data_chart" style="width: 900px; height: 500px" class="notBottom"></div>
 
       <!-- Bottom Navigation Bar -->
       <div class="bottomBar">

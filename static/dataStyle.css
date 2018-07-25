@@ -20,3 +20,12 @@
     background-color: #24635B;
     color: white;
 }
+
+.notBottom{
+  margin: 8px;
+}
+
+/* Override Chrome Margins */
+body{
+  margin: 0;
+}
