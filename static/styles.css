@@ -37,7 +37,7 @@ h1{
 .bottomBar {
     background-color: #333;
     overflow: hidden;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     /* box-shadow: 0 10px 8px -6px #999; */
