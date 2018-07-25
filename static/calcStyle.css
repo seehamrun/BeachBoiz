@@ -67,3 +67,7 @@ button:active {
 .bottomBar {
   position: absolute;
 }
+
+body{
+  margin-top: 60px;
+}
