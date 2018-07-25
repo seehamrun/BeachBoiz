@@ -1,5 +1,7 @@
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Muli" />
+
     <link rel="stylesheet" href="../static/styles.css">
     <link rel="stylesheet" href="../static/settingsStyle.css">
   </head>
@@ -21,6 +23,19 @@
       </ul>
     </div>
     <h1>Settings</h1>
+    <div id='user_entry' class="notBottom">
+      <form method='post'>
+        <p>Enter an image url for your profile image (it should be square):
+          <input name='prof_url' type="text">
+        </p>
+        <p>Enter your location:
+          <input name='location' type="text">
+        </p>
+        <input type="submit">
+      </form>
+    </div>
+
+    <p>Sorry, this currently doesn't work</p>
 
     <div class="bottomBar">
       <a href="../static/about_us.html">About</a>

@@ -3,6 +3,10 @@ body {
   margin-top: 60px;
 }
 
+p {
+  font-family: Muli;
+}
+
 .bottomBar {
   position: absolute;
 }
