@@ -42,9 +42,43 @@ The following section contains the code to the bio section of the home page -->
               <td class="goalsSection" style="background-color: #333; width:100%">
                 <div>
                     <h1>
-                      Insert Goals Here
+                      Goals
                     </h1>
+                    <div id='goal_entry'>
+                      <h2>Add Goal</h2>
+                      <form method='post'>
+                        <p>Enter the the date you want to achieve this goal by:
+                          <input name='goal_date' type="date" max="9999-12-31" min="1900-01-01">
+                        </p>
+                        <p>Enter your goal quantity of electricity (in kWh):
+                          <input name='goal_qty' type="number" step=".0000001">
+                        </p>
+                        <p>Enter your goal cost of electricity (in dollars):
+                          <input name='goal_cost' type="number" step=".0000001">
+                        </p>
+                        <input type="submit">
+                      </form>
+                    </div>
+                    <div id='show_goals'>
+                      <table id='goal_table'>
+                        <tr>
+                          <th>Goal Date</th>
+                          <th>Goal Quantity</th>
+                          <th>Goal Cost</th>
+                          <th>Delete Goal</th>
+                        </tr>
+                        {% for goal in goals %}
+                        <tr>
+                          <td>By {{goal.date}}</td>
+                          <td>{{goal.goal_qty}} kWh</td>
+                          <td>${{'%0.2f' % goal.goal_cost|float}}</td>
+                          <td><a href='/delete_goal?goal_id={{goal.key.urlsafe()}}'>Delete</a></td>
+                        </tr>
+                        {% endfor %}
+                      </table>
+                    </div>
                 </div>
+
               </td>
 
           </tr>
@@ -60,7 +94,7 @@ The following section contains the code to the bio section of the home page -->
       </table>
 
       <!-- Bottom Navigation Bar -->
-    <div class="bottomBar"> 
+    <div class="bottomBar">
         <a href="../static/about_us.html">About</a>
         <a href="#contactUs">Contact</a>
         <a href="#howToHelp">How to help</a>
