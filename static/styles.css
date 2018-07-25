@@ -156,7 +156,8 @@ li .navButton:hover {
 }
 
 p{
-  margin: 10px
+  margin: 10px;
+  font-family: labelFont, adam;
 }
 .navButton {
     background-color: #333;
