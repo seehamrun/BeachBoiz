@@ -2,6 +2,7 @@
 
     <head>
         <link rel="stylesheet" href="../static/styles.css">
+        <link rel="stylesheet" href="../static/dataStyle.css">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script src='../static/data.js'></script>
@@ -41,17 +42,18 @@
         </form>
       </div>
       <div id='show_data'>
-        <table>
+        <table id='data_table'>
           <tr>
-            <td>Date</td>
-            <td>Quantity</td>
-            <td>Cost</td>
+            <th>Date</th>
+            <th>Quantity</th>
+            <th>Cost</th>
+            <th>Delete Bill</th>
           </tr>
           {% for bill in bills %}
           <tr>
             <td>{{bill.date}}</td>
-            <td>{{bill.util_qty}}</td>
-            <td>{{bill.util_cost}}</td>
+            <td>{{bill.util_qty}} kWh</td>
+            <td>${{'%0.2f' % bill.util_cost|float}}</td>
             <td><a href='/delete_bill?bill_id={{bill.key.urlsafe()}}'>Delete</a></td>
           </tr>
           {% endfor %}
