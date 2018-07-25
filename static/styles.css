@@ -96,7 +96,7 @@ h1{
 
 /* Add a color to the active/current link */
 .bottomBar a.active {
-    background-color: #4CAF50;
+    background-color: #555;
     color: white;
 }
 
@@ -129,8 +129,6 @@ ul {
     width: 100%;
     font-size: 20px;
     font-family: myFirstFont;
-
-
 }
 
 li {
@@ -290,4 +288,8 @@ li.dropdown {
   top: 0px;
   box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.0 );
   background: rgba( 20, 224, 133, 1 );
+}
+
+.active {
+
 }
