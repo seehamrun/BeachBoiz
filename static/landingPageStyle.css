@@ -47,6 +47,10 @@ h2{
 
 }
 
+#proDesContent{
+
+}
+
 p{
   text-align: left;
 }
@@ -65,7 +69,23 @@ body{
   margin: 25px;
 }
 
+.learnMoreB{
+  text-align: center;
+  width: 200px;
+  height: 60px;
+  font-size: 2vw;
+  background-color: #e27d60;
+  border: none;
+  color: black;
+  margin:auto;
+  display:block;
 
+
+}
+
+.learnMoreB:active {
+  outline:none;
+}
 
 html{
  height: 100%;
