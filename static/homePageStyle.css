@@ -47,16 +47,43 @@ body{
   margin-left: 500px;
 }
 
+table{
+  width:100%;
+  padding: 10px
+}
+
 /* bio styles */
 /* ///////// */
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 40%;
     z-index: 0;
+    width:auto;
+    
+    margin-bottom: 80px;
+    margin-right: 20px;
+    align-content: center;
+    padding: 20px;
+    background-color: #333;
+    color: #C38D9E;
 }
 
+h4{
+  font-size: 30px;
+  text-align: center;
+}
+
+.goalsSection{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: #333;
+  width:60%
+}
+
+.goalsSection:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
 /* On mouse-over, add a deeper shadow */
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -69,4 +96,5 @@ body{
 
 #data_chart{
   z-index: 1;
+
 }

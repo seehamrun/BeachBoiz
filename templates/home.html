@@ -30,15 +30,23 @@ The following section contains the code to the bio section of the home page -->
       <table>
 
           <tr>
-              <td>
+              <td style="width:200px">
                 <div class="card">
-                  <img src="/static/images/UserImgPlaceholder.jpg" alt="Avatar" style= "height: 30px">
+                  <img id="userimg" src="/static/images/UserImgPlaceholder.jpg" alt="Avatar" style= "height: 300px">
                   <div class="container">
-                    <h4><b>{{userName}}</b></h4>
-                    <p>Architect & Engineer</p>
+                    <h4><b>Email: {{userName}}</b></h4>
                   </div>
                 </div>
               </td>
+
+              <td class="goalsSection" style="background-color: #333; width:100%">
+                <div>
+                    <h1>
+                      Insert Goals Here
+                    </h1>
+                </div>
+              </td>
+
           </tr>
 
 <!-- //Das it for the bio section :) -->
