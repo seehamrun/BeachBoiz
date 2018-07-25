@@ -37,7 +37,7 @@ h1{
 .bottomBar {
     background-color: #333;
     overflow: hidden;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     /* box-shadow: 0 10px 8px -6px #999; */
@@ -220,7 +220,7 @@ li.dropdown {
     text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {background-color: #ccc}
 
 .dropdown:hover .dropdown-content {
     display: block;

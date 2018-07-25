@@ -1,0 +1,22 @@
+#data_table {
+    /*font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    */
+    border-collapse: collapse;
+}
+
+#data_table td, #data_table th {
+    /* border: 1px solid #ddd; */
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    width: 200px;
+}
+
+#data_table tr:nth-child(odd){background-color: #74C3BE;}
+
+#data_table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #24635B;
+    color: white;
+}
