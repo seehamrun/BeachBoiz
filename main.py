@@ -66,11 +66,34 @@ class ShowHome(webapp2.RequestHandler):
         user = users.get_current_user()
         self.response.headers['Content-Type'] = 'text/html'
         template = jinja_env.get_template('templates/home.html')
+        goals_list = database.DatabaseGoal.query(database.DatabaseBill.user == user.nickname()).fetch()
         values = {
             'logoutUrl': users.create_logout_url('/'),
             'userName': user.nickname(),
+            'goals': goals_list,
         }
         self.response.write(template.render(values))
+
+    def post(self):
+        user = users.get_current_user()
+        qty = self.request.get('goal_qty')
+        cost = self.request.get('goal_cost')
+        date = str(self.request.get('goal_date'))
+        year = int(date[:4])
+        month = int(date[5:7])
+        day = int(date[8:10])
+        stored_date = datetime.date(year,month,day)
+        logging.info(date)
+        stored_goal = database.DatabaseGoal(goal_qty=float(qty), goal_cost=float(cost),
+                                            date=stored_date, user=user.nickname())
+        stored_goal.put()
+
+        response_html = jinja_env.get_template('templates/goal_submitted.html')
+        values = {
+            'goal': stored_goal,
+            'logoutUrl': users.create_logout_url('/'),
+        }
+        self.response.write(response_html.render(values))
 
 class LoadData(webapp2.RequestHandler):
     def get(self):
@@ -123,7 +146,6 @@ class DefaultPage(webapp2.RequestHandler):
             self.redirect('/home')
         else:
             self.redirect('/static/landing.html')
-
 
 app = webapp2.WSGIApplication([
     ('/', DefaultPage),

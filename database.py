@@ -10,4 +10,5 @@ class DatabaseBill(ndb.Model):
 class DatabaseGoal(ndb.Model):
     goal_qty = ndb.FloatProperty()
     goal_cost = ndb.FloatProperty()
+    date = ndb.DateProperty()
     user = ndb.StringProperty()
