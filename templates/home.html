@@ -39,7 +39,7 @@ The following section contains the code to the bio section of the home page -->
               </td>
 
               <td class="goalsSection" style="background-color: #333; width:100%">
-                <div>
+                <div id='goals_div'>
                     <h1>
                       Goals
                     </h1>
@@ -71,7 +71,7 @@ The following section contains the code to the bio section of the home page -->
                           <td>By {{goal.date}}</td>
                           <td>{{goal.goal_qty}} kWh</td>
                           <td>${{'%0.2f' % goal.goal_cost|float}}</td>
-                          <td><a href='/delete_goal?goal_id={{goal.key.urlsafe()}}'>Delete</a></td>
+                          <td><a href='/delete_goal?goal_id={{goal.key.urlsafe()}}' class='delete_link'>Delete</a></td>
                         </tr>
                         {% endfor %}
                       </table>

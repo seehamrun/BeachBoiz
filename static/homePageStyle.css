@@ -49,7 +49,15 @@ body{
 
 table{
   width:100%;
-  padding: 10px
+  padding: 10px;
+}
+
+td {
+  vertical-align: top;
+}
+
+tr {
+
 }
 
 /* bio styles */
@@ -60,8 +68,8 @@ table{
     transition: 0.3s;
     z-index: 0;
     width:auto;
+    height: 600px;
 
-    margin-bottom: 80px;
     margin-right: 20px;
     align-content: center;
     padding: 20px;
@@ -78,8 +86,13 @@ h4{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   background-color: #333;
-  width:60%
+  width:60%;
+  padding: 30px;
+  vertical-align: top;
+  color: white;
 }
+
+
 
 .goalsSection:hover{
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -106,6 +119,38 @@ h4{
   margin-left: auto;
   margin-right: auto;
   border: 2px solid #E27D60;
+}
+
+#show_goals {
+  height: 300px;
+  overflow-y: scroll;
+}
+
+#goal_table {
+    /*font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    */
+    border-collapse: collapse;
+}
+
+#goal_table td, #goal_table th {
+    /* border: 1px solid #ddd; */
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    width: 200px;
+    color: white;
+}
+
+#goal_table tr:nth-child(odd){background-color: #666;}
+
+#goal_table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #24635B;
+}
+
+.delete_link {
+  color: #74C3BE;
 }
 
 body{
