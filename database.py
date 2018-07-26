@@ -12,3 +12,8 @@ class DatabaseGoal(ndb.Model):
     goal_cost = ndb.FloatProperty()
     date = ndb.DateProperty()
     user = ndb.StringProperty()
+
+class DatabaseUser(ndb.Model):
+    user = ndb.StringProperty();
+    profpic_url = ndb.StringProperty();
+    zipcode = ndb.IntegerProperty();
