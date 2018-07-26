@@ -14,3 +14,9 @@ indexes:
   properties:
   - name: user
   - name: date
+    direction: desc
+
+- kind: DatabaseBill
+  properties:
+  - name: user
+  - name: date
