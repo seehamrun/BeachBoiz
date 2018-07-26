@@ -204,3 +204,7 @@ background: rgba( 20, 224, 133, 1 );
 top: 0px;
 background: #c38d9e;
 }
+
+#calcLM {
+  width: 50px;
+}

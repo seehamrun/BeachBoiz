@@ -118,7 +118,7 @@ body{
 
 #learnMoreB{
   text-align: center;
-  width: 200px;
+  width: 275px;
   height: 60px;
   font-size: 2vw;
   background-color: #e27d60;
@@ -132,11 +132,12 @@ body{
 
 .LMB{
   text-align: center;
-  width: 200px;
+  width: 250px;
   height: 60px;
   font-size: 2vw;
   background-color: #e27d60;
   border: none;
+  font-family: Muli;
 
 
   color: black;
