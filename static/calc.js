@@ -6,6 +6,7 @@ function setup()
    inputNumber = document.querySelector("#testNum");
    inputRate = document.querySelector("#rateNum");
    inputCost = document.querySelector("#cost");
+   outputText = document.querySelector("#userMessage");
 
 }
 
@@ -13,6 +14,7 @@ function setup()
 
 function calculate()
 {
+  console.log("buttonPressed")
   userInput = Number(inputNumber.value);
   userRate = Number(inputRate.value);
   userCost = Number(inputCost.value);
@@ -38,6 +40,8 @@ function calculate()
     costSlide.value = amt;
     inputCost.value = amt;
     lastValue=userInput
+    outputText.innerHTML = "Because your rate was <div id=amtUsed>" + userRate + " $/kWh</div>, and your usage was <div id=amtUsed>" +
+                            userInput + " kWh</div>, you payed <div id=amtUsed>$" + amt +"</div>."
   }
 
   else if(userCost/userRate!=lastValue && userCost/userRate!=0)
@@ -49,6 +53,8 @@ function calculate()
     inputNumber.value = amt
     costSlide.value = userCost
     lastValue = amt
+    outputText.innerHTML = "Beacuse your rate was " + userRate + " $/kWh, and your <br> bill was " +
+                            userCost + ", you used " + amt + " kWh of electricity."
   }
 
 
