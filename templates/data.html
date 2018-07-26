@@ -32,16 +32,16 @@
         <h1>Enter Data</h1>
         <form method='post'>
           <p>Enter the date of your last bill:
-            <input name='bill_date' type="date" max="9999-12-31" min="1900-01-01" required>
+            <input id='bill_date' type="date" value='' max="9999-12-31" min="1900-01-01">
           </p>
           <p>Enter the quantity of electricity (in kWh) from your last bill:
-            <input name='bill_qty' type="number" step=".0000001" required>
+            <input id='bill_qty' type="number" value='' step=".0000001" >
           </p>
           <p>Enter the cost of electricity (in dollars) from your last bill:
-            <input name='bill_cost' type="number" step=".0000001" required>
+            <input id='bill_cost' type="number" value='' step=".0000001" >
           </p>
-          <input type="submit" class="submit">
         </form>
+        <button type="button" class='submit' id='submit'>Submit</button>
       </div>
       <div id='show_data' class="notBottom">
         <table id='data_table'>
