@@ -15,7 +15,5 @@ p{
 
 
 .bottomBar {
-  position: relative;
-  bottom: -522.5px;
-
+  position: absolute;
 }

@@ -5,7 +5,6 @@ body {
 
 
 .bottomBar {
-  position: relative;
-  bottom: -665px;
+  position: absolute;
 
 }
