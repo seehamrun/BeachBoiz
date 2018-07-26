@@ -25,9 +25,7 @@ li a {
     text-decoration: none;
 }
 
-li .navButton:hover {
-    background-color: #999;
-}
+
 
 p{
   margin: 10px
