@@ -10,7 +10,14 @@ function setup()
 
 }
 
-
+function loadData() {
+  jQuery.get("/get_data", {}, (date) => {
+    if(date[0]!=undefined)
+    {
+      inputRate.value=date[0]["cost"]/date[0]["qty"]
+    }
+  })
+}
 
 function calculate()
 {
@@ -67,9 +74,10 @@ function calculate()
 window.addEventListener("load", () =>{
 
   setup()
+  loadData()
   document.querySelector("#test").addEventListener("click", calculate);
 
-
+    console.log("test")
     $("input[type='range']").on('input', function() {
       // Cache this for efficiency
       el = $(this);
