@@ -39,6 +39,9 @@ The following section contains the code to the bio section of the home page -->
                 </div>
               </td>
 
+<!-- //Das it for the bio section :) -->
+<!-- goals section starts here -->
+
               <td class="goalsSection" style="background-color: #333; width:100%">
                 <div id='goals_div'>
                     <h1>
@@ -48,16 +51,16 @@ The following section contains the code to the bio section of the home page -->
                       <h2>Add Goal</h2>
                       <form method='post'>
                         <p>Enter the the date you want to achieve this goal by:
-                          <input name='goal_date' type="date" max="9999-12-31" min="1900-01-01"id="date" class="textIn">
+                          <input id='goal_date' type="date" max="9999-12-31" min="1900-01-01"id="date" class="textIn">
                         </p>
                         <p>Enter your goal quantity of electricity (in kWh):
-                          <input name='goal_qty' type="number" step=".0000001" id="kwh" class="textIn">
+                          <input id='goal_qty' type="number" step=".0000001" id="kwh" class="textIn">
                         </p>
                         <p>Enter your goal cost of electricity (in dollars):
-                          <input name='goal_cost' type="number" step=".0000001" id="cost" class="textIn">
+                          <input id='goal_cost' type="number" step=".0000001" id="cost" class="textIn">
                         </p>
-                        <input type="submit" class="submit">
                       </form>
+                      <button type="button" class='submit' id='submit'>Submit</button>
                     </div>
                     <div id='show_goals'>
                       <table id='goal_table'>
@@ -72,7 +75,10 @@ The following section contains the code to the bio section of the home page -->
                           <td>By {{goal.date}}</td>
                           <td>{{goal.goal_qty}} kWh</td>
                           <td>${{'%0.2f' % goal.goal_cost|float}}</td>
-                          <td><a href='/delete_goal?goal_id={{goal.key.urlsafe()}}' class='delete_link'>Delete</a></td>
+                          <form>
+                            <input id='goal_id' type=hidden value={{goal.key.urlsafe()}}>
+                          </form>
+                          <td><a class='delete' href='/delete_goal?goal_id={{goal.key.urlsafe()}}'><button id='delete'>x</button></a></td>
                         </tr>
                         {% endfor %}
                       </table>
@@ -81,9 +87,9 @@ The following section contains the code to the bio section of the home page -->
 
               </td>
 
-          </tr>
+<!-- goals section ends here -->
 
-<!-- //Das it for the bio section :) -->
+          </tr>
 
           <tr>
             <td>

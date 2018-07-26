@@ -75,3 +75,43 @@ function loadData() {
 }
 
 google.charts.setOnLoadCallback(loadData);
+
+//add handlers
+
+window.addEventListener("load", () =>{
+  console.log('was setup')
+  clickHandler()
+  deleteHandler()
+})
+
+function clickHandler() {
+  button = document.querySelector("#submit")
+  button.addEventListener("click", () => {
+    var date = document.querySelector("#goal_date").value
+    var qty = document.querySelector("#goal_qty").value
+    var cost = document.querySelector("#goal_cost").value
+    if (date == "" || qty == "" || cost == "") {
+      alert("Please fill out all of the values.")
+    }
+    else {
+      var message = (`Successfully entered a goal for "${date}" with quanity ${qty} kWh and cost $${cost}.`)
+      jQuery.post("/home", {goal_date: date, goal_qty: qty, goal_cost: cost}, (data) => {
+        alert(message)
+        window.location.replace("/home");
+        });
+    }
+  })
+}
+
+function deleteHandler() {
+  var buttons = document.querySelectorAll(".delete")
+  console.log(buttons)
+  buttons.forEach(function(button) {
+    button.addEventListener("click", () => {
+      console.log('was clicked')
+      if (confirm("Are you sure?")) {
+        window.location.replace("/home");
+      }
+    })
+  })
+}

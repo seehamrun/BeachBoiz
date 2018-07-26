@@ -81,13 +81,7 @@ class ShowHome(webapp2.RequestHandler):
         stored_goal = database.DatabaseGoal(goal_qty=float(qty), goal_cost=float(cost),
                                             date=stored_date, user=user.nickname())
         stored_goal.put()
-
-        response_html = jinja_env.get_template('templates/goal_submitted.html')
-        values = {
-            'goal': stored_goal,
-            'logoutUrl': users.create_logout_url('/'),
-        }
-        self.response.write(response_html.render(values))
+        time.sleep(.1)
 
 class LoadData(webapp2.RequestHandler):
     def get(self):
@@ -144,17 +138,6 @@ class DefaultPage(webapp2.RequestHandler):
 
 class DeleteGoal(webapp2.RequestHandler):
     def get(self):
-        goal_to_delete = self.request.get('goal_id')
-        response_html = jinja_env.get_template('templates/delete_goal_confirm.html')
-        key = ndb.Key(urlsafe=goal_to_delete)
-        the_goal = key.get()
-        data = {
-            'goal_id': the_goal.key.urlsafe(),
-            'goal': the_goal
-        }
-        self.response.write(response_html.render(data))
-
-    def post(self):
         key = ndb.Key(urlsafe=self.request.get('goal_id'))
         key.delete()
         time.sleep(.1)
