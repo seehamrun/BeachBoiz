@@ -8,11 +8,7 @@ h1 {
   color: white;
 }
 
-.textIn {
-  border: 6px double black;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
+
 
 /* Reset */
 button {
@@ -89,4 +85,58 @@ input{
   color: white;
   display: inline;
   font-size: 20px;
+}
+
+
+.textIn {
+  /* border: 6px double black; */
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-family: Muli, Helvetica;
+
+}
+
+.textIn {
+  display: inline-block;
+  position: relative;
+  padding: 3px 5px;
+  top: 5;
+
+
+  /* box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.1 ); */
+
+  -webkit-transform: translateZ(0);
+     -moz-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+          transform: translateZ(0);
+
+  -webkit-transition: all 0.25s ease;
+     -moz-transition: all 0.25s ease;
+      -ms-transition: all 0.25s ease;
+          transition: all 0.25s ease;
+}
+
+.textIn:hover {
+  /* top: -1px; */
+  /* box-shadow: 0px 10px 10px rgba( 15, 165, 60, 0.2 ); */
+
+  -webkit-transform: rotateX(25deg);
+     -moz-transform: rotateX(25deg);
+      -ms-transform: rotateX(25deg);
+          transform: rotateX(25deg);
+}
+
+#rateNum:active {
+  top: 0px;
+  background: #e27d60;
+}
+
+#testNum:active{
+  top: 0px;
+  background: rgba( 20, 224, 133, 1 );
+}
+
+#cost:active{
+  top: 0px;
+  background: #c38d9e;
 }

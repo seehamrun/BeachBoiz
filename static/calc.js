@@ -53,8 +53,8 @@ function calculate()
     inputNumber.value = amt
     costSlide.value = userCost
     lastValue = amt
-    outputText.innerHTML = "Beacuse your rate was " + userRate + " $/kWh, and your <br> bill was " +
-                            userCost + ", you used " + amt + " kWh of electricity."
+    outputText.innerHTML = "Beacuse your rate was <div id=amtUsed>" + userRate + " $/kWh</div>, and your bill was <div id=amtUsed>" +
+                            userCost + "</div>, <br>you used <div id=amtUsed>" + amt + "</div> kWh of electricity."
   }
 
 
