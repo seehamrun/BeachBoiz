@@ -107,7 +107,7 @@ h4{
 
 #data_chart{
   z-index: 1;
-
+  margin-top: 20px;
 }
 
 #userimg{
@@ -147,8 +147,9 @@ h4{
     background-color: #24635B;
 }
 
-.delete_link {
-  color: #74C3BE;
+#delete {
+  background-color: #74C3BE;
+  border: 0px;
 }
 
 body{
