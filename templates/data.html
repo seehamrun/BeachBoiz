@@ -15,6 +15,7 @@
       <div class="navbar">
         <ul>
           <a href="/"><img src="../static/images/logo.jpg" height=48px width=auto alt="Beach Boiz" id="itemImg" style="float:left"/></a>
+          <a href="/" id="LHName" style="float:left">Lighthouse</a>
           <li><a href="/home"<button class="navButton" id="home">Home</button></a></li>
           <li><a href="/calc"<button class="navButton" id="calc">Calculator</button></a></li>
           <li><a href="/data"<button class="navButton active" id="data">Data</button></a></li>
@@ -28,11 +29,13 @@
           </li>
         </ul>
       </div>
+
+
       <div id='data_entry' class="notBottom">
         <h1>Enter Data</h1>
         <form method='post'>
           <p>Enter the date of your last bill:
-            <input id='bill_date' class="textIn" type="date" max="9999-12-31" min="1900-01-01">
+            <input id='bill_date' class="textIn" type="date" max="9999-12-31">
           </p>
           <p>Enter the quantity of electricity (in kWh) from your last bill:
             <input id='bill_qty' class="textIn" type="number" step=".0000001" >
@@ -43,6 +46,8 @@
         </form>
         <button type="button" class='submit' id='submit'>Submit</button>
       </div>
+
+
       <div id='show_data' class="notBottom">
         <table id='data_table'>
           <tr>
