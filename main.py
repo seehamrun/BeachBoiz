@@ -24,7 +24,7 @@ class ShowData(webapp2.RequestHandler):
         template = jinja_env.get_template('templates/data.html')
         bill_values = {
             'bills': database.DatabaseBill.query(       \
-                     database.DatabaseBill.user == user.nickname()).order(database.DatabaseBill.date).fetch(),
+                     database.DatabaseBill.user == user.nickname()).order(-database.DatabaseBill.date).fetch(),
             'logoutUrl': users.create_logout_url('/'),
             'user_nickname': user.nickname(),
         }
@@ -100,7 +100,7 @@ class LoadData(webapp2.RequestHandler):
         user = users.get_current_user()
         self.response.headers['Content-Type'] = 'application/json'
         bills_list = database.DatabaseBill.query(       \
-                     database.DatabaseBill.user == user.nickname()).order(database.DatabaseBill.date).fetch()
+                     database.DatabaseBill.user == user.nickname()).order(-database.DatabaseBill.date).fetch()
         json_entries = []
         for bill in bills_list:
             e = {}
