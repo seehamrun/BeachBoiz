@@ -24,8 +24,6 @@ font-family: Muli, Helvetica;
 .textIn {
 display: inline-block;
 position: relative;
-padding: 3px 5px;
-top: 5;
 -webkit-transform: translateZ(0);
 -moz-transform: translateZ(0);
 -ms-transform: translateZ(0);
@@ -57,9 +55,4 @@ background: rgba( 20, 224, 133, 1 );
 #cost:active{
 top: 0px;
 background: #c38d9e;
-}
-.bottomBar {
-  position: relative;
-  bottom: -485px;
-
 }
