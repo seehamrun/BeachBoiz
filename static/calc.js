@@ -14,6 +14,7 @@ function loadData() {
   jQuery.get("/get_data", {}, (date) => {
     if(date[0]!=undefined)
     {
+      date
       inputRate.value=date[0]["cost"]/date[0]["qty"]
     }
   })
@@ -48,7 +49,7 @@ function calculate()
     inputCost.value = amt;
     lastValue=userInput
     outputText.innerHTML = "Because your rate was <div id=amtUsed>" + userRate + " $/kWh</div>, and your usage was <div id=amtUsed>" +
-                            userInput + " kWh</div>, you payed <div id=amtUsed>$" + amt +"</div>."
+                            userInput + " kWh</div>, you paid <div id=amtUsed>$" + amt +"</div>."
   }
 
   else if(userCost/userRate!=lastValue && userCost/userRate!=0)
