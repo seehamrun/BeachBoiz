@@ -48,13 +48,13 @@ The following section contains the code to the bio section of the home page -->
                       <h2>Add Goal</h2>
                       <form method='post'>
                         <p>Enter the the date you want to achieve this goal by:
-                          <input name='goal_date' type="date" max="9999-12-31" min="1900-01-01">
+                          <input name='goal_date' type="date" max="9999-12-31" min="1900-01-01"id="date" class="textIn">
                         </p>
                         <p>Enter your goal quantity of electricity (in kWh):
-                          <input name='goal_qty' type="number" step=".0000001">
+                          <input name='goal_qty' type="number" step=".0000001" id="kwh" class="textIn">
                         </p>
                         <p>Enter your goal cost of electricity (in dollars):
-                          <input name='goal_cost' type="number" step=".0000001">
+                          <input name='goal_cost' type="number" step=".0000001" id="cost" class="textIn">
                         </p>
                         <input type="submit" class="submit">
                       </form>

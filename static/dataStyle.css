@@ -30,3 +30,46 @@ body{
   margin: 0;
   margin-top: 60px;
 }
+.textIn {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-family: Muli, Helvetica;
+}
+/*Button hover*/
+.textIn {
+  display: inline-block;
+  position: relative;
+  padding: 3px 5px;
+  top: 5;
+  -webkit-transform: translateZ(0);
+     -moz-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+          transform: translateZ(0);
+
+  -webkit-transition: all 0.25s ease;
+     -moz-transition: all 0.25s ease;
+      -ms-transition: all 0.25s ease;
+          transition: all 0.25s ease;
+}
+
+.textIn:hover {
+  -webkit-transform: rotateX(25deg);
+     -moz-transform: rotateX(25deg);
+      -ms-transform: rotateX(25deg);
+          transform: rotateX(25deg);
+}
+
+#date:active {
+  top: 0px;
+  background: #e27d60;
+}
+
+#kwh:active{
+  top: 0px;
+  background: rgba( 20, 224, 133, 1 );
+}
+
+#cost:active{
+  top: 0px;
+  background: #c38d9e;
+}
