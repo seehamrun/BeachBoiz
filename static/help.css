@@ -3,6 +3,16 @@ body {
   margin-top: 60px
 }
 
+h1{
+  padding-top: 20px;
+  font-size: 55px;
+}
+
+p{
+  margin:60px;
+  font-size: 30px
+}
+
 
 .bottomBar {
   position: relative;
