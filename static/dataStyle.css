@@ -59,17 +59,17 @@ body{
           transform: rotateX(25deg);
 }
 
-#date:active {
+#bil_date:active {
   top: 0px;
   background: #e27d60;
 }
 
-#kwh:active{
+#bill_qyt:active{
   top: 0px;
   background: rgba( 20, 224, 133, 1 );
 }
 
-#cost:active{
+#bill_cost:active{
   top: 0px;
   background: #c38d9e;
 }

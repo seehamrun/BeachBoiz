@@ -8,7 +8,9 @@ h1 {
   color: white;
 }
 
-
+body{
+  margin: 0px;
+}
 
 /* Reset */
 button {
@@ -61,7 +63,9 @@ button:active {
   background: rgba( 20, 224, 133, 1 );
 }
 .bottomBar {
-  position: absolute;
+  position: relative;
+  bottom: -117px;
+
 }
 
 .container{
@@ -84,7 +88,6 @@ input{
 #amtUsed{
   color: white;
   display: inline;
-  font-size: 20px;
 }
 
           /* Button Highlight */
@@ -130,4 +133,14 @@ input{
 #cost:active{
   top: 0px;
   background: #c38d9e;
+}
+
+#amtOver {
+  display: inline;
+  color: #c90d00;
+}
+
+#amtUnder {
+  display: inline;
+  color: #186601;
 }
