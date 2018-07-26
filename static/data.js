@@ -76,3 +76,29 @@ function loadData() {
 }
 
 google.charts.setOnLoadCallback(loadData);
+
+// add click handler stuff
+
+window.addEventListener("load", () =>{
+  console.log('was setup')
+  clickHandler()
+})
+
+function clickHandler() {
+  button = document.querySelector("#submit")
+  button.addEventListener("click", () => {
+    var date = document.querySelector("#bill_date").value
+    var qty = document.querySelector("#bill_qty").value
+    var cost = document.querySelector("#bill_cost").value
+    if (date == "" || qty == "" || cost == "") {
+      alert("Please fill out all of the values.")
+    }
+    else {
+      var message = (`Successfully entered a bill from "${date}" with quanity ${qty} kWh and cost $${cost}.`)
+      jQuery.post("/data", {bill_date: date, bill_qty: qty, bill_cost: cost}, (data) => {
+        alert(message)
+        window.location.replace("/data");
+        });
+    }
+  })
+}
