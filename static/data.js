@@ -82,6 +82,7 @@ google.charts.setOnLoadCallback(loadData);
 window.addEventListener("load", () =>{
   console.log('was setup')
   clickHandler()
+  deleteHandler()
 })
 
 function clickHandler() {
@@ -100,5 +101,24 @@ function clickHandler() {
         window.location.replace("/data");
         });
     }
+  })
+}
+
+function deleteHandler() {
+  var buttons = document.querySelectorAll(".delete")
+  console.log(buttons)
+  buttons.forEach(function(button) {
+    button.addEventListener("click", () => {
+      // id = document.querySelector("#bill_id").value
+      // console.log(id)
+      console.log('was clicked')
+      if (confirm("Are you sure?")) {
+        // jQuery.post("/delete_bill", {bill_id: id}, (data) => {
+        //   alert("Successfully deleted.")
+        //   window.location.replace("/data");
+        // });
+        window.location.replace("/data");
+      }
+    })
   })
 }

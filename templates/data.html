@@ -56,7 +56,11 @@
             <td>{{bill.date}}</td>
             <td>{{bill.util_qty}} kWh</td>
             <td>${{'%0.2f' % bill.util_cost|float}}</td>
-            <td><a href='/delete_bill?bill_id={{bill.key.urlsafe()}}'>Delete</a></td>
+            <!-- <td><a id='delete' href='/delete_bill?bill_id={{bill.key.urlsafe()}}'>Delete</a></td> -->
+            <form>
+              <input id='bill_id' type=hidden value={{bill.key.urlsafe()}}>
+            </form>
+            <td><a class='delete' href='/delete_bill?bill_id={{bill.key.urlsafe()}}'><button id='delete'>x</button></a></td>
           </tr>
           {% endfor %}
         </table>
