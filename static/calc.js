@@ -1,5 +1,6 @@
 var inputNumber = ""
 var lastValue = null;
+var lastMonth = null;
 var el, newPoint, newPlace, offset;
 function setup()
 {
@@ -14,8 +15,8 @@ function loadData() {
   jQuery.get("/get_data", {}, (date) => {
     if(date[0]!=undefined)
     {
-      date
-      inputRate.value=date[0]["cost"]/date[0]["qty"]
+      lastMonth = date[0];
+      inputRate.value=date[0]["cost"]/date[0]["qty"];
     }
   })
 }
@@ -49,7 +50,19 @@ function calculate()
     inputCost.value = amt;
     lastValue=userInput
     outputText.innerHTML = "Because your rate was <div id=amtUsed>" + userRate + " $/kWh</div>, and your usage was <div id=amtUsed>" +
-                            userInput + " kWh</div>, you paid <div id=amtUsed>$" + amt +"</div>."
+                            userInput + " kWh</div>, you would pay <div id=amtUsed>$" + amt +"</div>.";
+    if(amt>lastMonth['cost'])
+    {
+      outputText.innerHTML += "<br> Compared to last month, you would spend <div id=amtOver>$" + (amt-lastMonth["cost"]) + "</div> more.";
+    }
+    else if(amt<lastMonth["cost"])
+    {
+      outputText.innerHTML += "<br> Compared to last month, you would save <div id=amtUnder>$" + (lastMonth["cost"]-amt) + "</div>.";
+    }
+    else
+    {
+      outputText.innerHTML += "<br> You would be paying the same as last month with this configuration.";
+    }
   }
 
   else if(userCost/userRate!=lastValue && userCost/userRate!=0)
@@ -62,7 +75,21 @@ function calculate()
     costSlide.value = userCost
     lastValue = amt
     outputText.innerHTML = "Beacuse your rate was <div id=amtUsed>" + userRate + " $/kWh</div>, and your bill was <div id=amtUsed>" +
-                            userCost + "</div>, <br>you used <div id=amtUsed>" + amt + "</div> kWh of electricity."
+                            userCost + "</div>, you used <div id=amtUsed>" + amt + "</div> kWh of electricity.";
+
+    if(amt>lastMonth['cost'])
+    {
+      outputText.innerHTML += "<br> Compared to last month, you would spend <div id=amtOver>$" + (amt-lastMonth["cost"]) + "</div> more.";
+    }
+    else if(amt<lastMonth["cost"])
+    {
+      outputText.innerHTML += "<br> Compared to last month, you would save <div id=amtUnder>$" + (lastMonth["cost"]-amt) + "</div>.";
+    }
+    else
+    {
+      outputText.innerHTML += "<br> You would be paying the same as last month with this configuration.";
+    }
+
   }
 
 

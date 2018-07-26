@@ -43,13 +43,7 @@ class ShowData(webapp2.RequestHandler):
         stored_bill = database.DatabaseBill(util_qty=float(qty), util_cost=float(cost),
                                             date=stored_date, user=user.nickname())
         stored_bill.put()
-
-        response_html = jinja_env.get_template('templates/data_submitted.html')
-        values = {
-            'bill': stored_bill,
-            'logoutUrl': users.create_logout_url('/'),
-        }
-        self.response.write(response_html.render(values))
+        time.sleep(.1)
 
 class ShowCalc(webapp2.RequestHandler):
     def get(self):

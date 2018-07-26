@@ -88,7 +88,6 @@ input{
 #amtUsed{
   color: white;
   display: inline;
-  font-size: 20px;
 }
 
           /* Button Highlight */
@@ -134,4 +133,14 @@ input{
 #cost:active{
   top: 0px;
   background: #c38d9e;
+}
+
+#amtOver {
+  display: inline;
+  color: #c90d00;
+}
+
+#amtUnder {
+  display: inline;
+  color: #186601;
 }
