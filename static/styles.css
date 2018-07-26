@@ -169,7 +169,10 @@ p{
     display: inline-block;
     outline: none;
 }
-
+.navBar a.active {
+    background-color: #555;
+    color: white;
+}
 
 
 /* navbar styles  (end) */
