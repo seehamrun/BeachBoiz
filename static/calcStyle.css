@@ -8,7 +8,9 @@ h1 {
   color: white;
 }
 
-
+body{
+  margin: 0px;
+}
 
 /* Reset */
 button {
@@ -61,7 +63,9 @@ button:active {
   background: rgba( 20, 224, 133, 1 );
 }
 .bottomBar {
-  position: absolute;
+  position: relative;
+  bottom: -117px;
+
 }
 
 .container{
