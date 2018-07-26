@@ -172,8 +172,7 @@ font-family: Muli, Helvetica;
 .textIn {
 display: inline-block;
 position: relative;
-padding: 3px 5px;
-top: 5;
+/* padding: 3px 5px; */
 -webkit-transform: translateZ(0);
 -moz-transform: translateZ(0);
 -ms-transform: translateZ(0);

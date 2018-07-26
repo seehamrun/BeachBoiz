@@ -39,8 +39,7 @@ body{
 .textIn {
   display: inline-block;
   position: relative;
-  padding: 3px 5px;
-  top: 5;
+  /* padding: 3px 5px; */
   -webkit-transform: translateZ(0);
      -moz-transform: translateZ(0);
       -ms-transform: translateZ(0);
@@ -59,12 +58,12 @@ body{
           transform: rotateX(25deg);
 }
 
-#bil_date:active {
+#bill_date:active {
   top: 0px;
   background: #e27d60;
 }
 
-#bill_qyt:active{
+#bill_qty:active{
   top: 0px;
   background: rgba( 20, 224, 133, 1 );
 }

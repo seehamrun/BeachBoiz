@@ -63,8 +63,7 @@ button:active {
   background: rgba( 20, 224, 133, 1 );
 }
 .bottomBar {
-  position: relative;
-  bottom: -117px;
+  position: absolute;
 
 }
 
@@ -101,7 +100,6 @@ input{
   display: inline-block;
   position: relative;
   padding: 3px 5px;
-  top: 5;
   -webkit-transform: translateZ(0);
      -moz-transform: translateZ(0);
       -ms-transform: translateZ(0);
