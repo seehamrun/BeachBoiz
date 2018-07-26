@@ -89,11 +89,9 @@ input{
 
 
 .textIn {
-  /* border: 6px double black; */
   margin-top: 5px;
   margin-bottom: 10px;
   font-family: Muli, Helvetica;
-
 }
 
 .textIn {
@@ -101,10 +99,6 @@ input{
   position: relative;
   padding: 3px 5px;
   top: 5;
-
-
-  /* box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.1 ); */
-
   -webkit-transform: translateZ(0);
      -moz-transform: translateZ(0);
       -ms-transform: translateZ(0);
@@ -117,9 +111,6 @@ input{
 }
 
 .textIn:hover {
-  /* top: -1px; */
-  /* box-shadow: 0px 10px 10px rgba( 15, 165, 60, 0.2 ); */
-
   -webkit-transform: rotateX(25deg);
      -moz-transform: rotateX(25deg);
       -ms-transform: rotateX(25deg);
