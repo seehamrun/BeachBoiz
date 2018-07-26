@@ -10,3 +10,7 @@ p {
 .bottomBar {
   position: absolute;
 }
+
+.notBottom{
+  margin: 8px;
+}

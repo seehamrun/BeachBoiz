@@ -139,6 +139,18 @@ class ShowSettings(webapp2.RequestHandler):
         }
         self.response.write(template.render(values))
 
+    def post(self):
+        user = users.get_current_user()
+        prof_url = self.request.get('prof_url')
+        zipcode = self.request.get('zipcode')
+        logging.info('info is:')
+        logging.info(zipcode)
+        logging.info(prof_url)
+        stored_user = database.DatabaseUser(user=user.nickname(), zipcode=int(zipcode), profpic_url=prof_url)
+        stored_user.put()
+        time.sleep(.1)
+        self.redirect("/settings")
+
 class DefaultPage(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
