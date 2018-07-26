@@ -60,7 +60,8 @@ class ShowHome(webapp2.RequestHandler):
         user = users.get_current_user()
         self.response.headers['Content-Type'] = 'text/html'
         template = jinja_env.get_template('templates/home.html')
-        goals_list = database.DatabaseGoal.query(database.DatabaseBill.user == user.nickname()).fetch()
+        goals_list = database.DatabaseGoal.query(           \
+                                                database.DatabaseGoal.user == user.nickname()).order(database.DatabaseGoal.date).fetch()
         values = {
             'logoutUrl': users.create_logout_url('/'),
             'userName': user.nickname(),
