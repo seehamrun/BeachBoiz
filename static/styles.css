@@ -259,6 +259,7 @@ li.dropdown {
   display: inline-block;
   position: relative;
   padding: 5px 10px;
+  margin-bottom: 25px;
   top: 10;
   font-size: 20px;
   font-family: myFirstFont, Helvetica;
