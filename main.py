@@ -62,10 +62,12 @@ class ShowHome(webapp2.RequestHandler):
         template = jinja_env.get_template('templates/home.html')
         goals_list = database.DatabaseGoal.query(           \
                                                 database.DatabaseGoal.user == user.nickname()).order(database.DatabaseGoal.date).fetch()
+        user_list = database.DatabaseUser.query(database.DatabaseBill.user == user.nickname()).fetch()
         values = {
             'logoutUrl': users.create_logout_url('/'),
             'userName': user.nickname(),
             'goals': goals_list,
+            'user': user_list[0]
         }
         self.response.write(template.render(values))
 
