@@ -124,10 +124,17 @@ class ShowSettings(webapp2.RequestHandler):
         logging.info('info is:')
         logging.info(zipcode)
         logging.info(prof_url)
-        stored_user = database.DatabaseUser(user=user.nickname(), zipcode=int(zipcode), profpic_url=prof_url)
-        stored_user.put()
+        user_list = database.DatabaseUser.query(database.DatabaseBill.user == user.nickname()).fetch()
+        if user_list != []:
+            for user in user_list:
+                user_info = user.key.get()
+                user_info.profpic_url = prof_url
+                user_info.zipcode = int(zipcode)
+                user_info.put()
+        else:
+            stored_user = database.DatabaseUser(user=user.nickname(), zipcode=int(zipcode), profpic_url=prof_url)
+            stored_user.put()
         time.sleep(.1)
-        self.redirect("/settings")
 
 class DefaultPage(webapp2.RequestHandler):
     def get(self):

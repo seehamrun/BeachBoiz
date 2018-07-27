@@ -21,7 +21,7 @@ function clickHandler() {
       var message = (`You have submitted "${url}" as your profile picture and ${zip} as your zip code.`)
       alert(message)
       jQuery.post("/settings", {prof_url: url, zipcode: zip}, (data) => {
-        console.log('it submitted')
+        window.location.replace("/settings");
         });
     }
   })
