@@ -63,11 +63,17 @@ class ShowHome(webapp2.RequestHandler):
         goals_list = database.DatabaseGoal.query(           \
                                                 database.DatabaseGoal.user == user.nickname()).order(database.DatabaseGoal.date).fetch()
         user_list = database.DatabaseUser.query(database.DatabaseBill.user == user.nickname()).fetch()
+        user_zip = ""
+        if user_list == []:
+            user_zip = "no zipcode entered"
+        else:
+            user_zip = user_list[0]
+
         values = {
             'logoutUrl': users.create_logout_url('/'),
             'userName': user.nickname(),
             'goals': goals_list,
-            'user': user_list[0]
+            'zipcode': user_zip
         }
         self.response.write(template.render(values))
 
