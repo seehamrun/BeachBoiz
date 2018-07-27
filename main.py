@@ -67,7 +67,7 @@ class ShowHome(webapp2.RequestHandler):
         if user_list == []:
             user_zip = "no zipcode entered"
         else:
-            user_zip = user_list[0]
+            user_zip = user_list[0].zipcode
 
         values = {
             'logoutUrl': users.create_logout_url('/'),
