@@ -110,7 +110,6 @@ h4{
   margin-top: 20px;
   border:10px solid #333;
   display: block;
-  width: auto;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: auto;
@@ -121,7 +120,14 @@ h4{
 #dataSection{
   background-color: #333;
   width:50%;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 800px;
 }
+
 
 #userimg{
   display: block;
